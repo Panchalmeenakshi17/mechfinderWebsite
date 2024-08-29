@@ -11,7 +11,7 @@ const Third= () => {
       className="relative h-screen flex items-center justify-center"
     >
       <div className="relative z-10 text-white text-center p-4">
-        <h1 className="text-4xl font-bold">About</h1>
+        <h1 className="text-4xl  font-Poppins">About</h1>
       </div>
     </Parallax>
     

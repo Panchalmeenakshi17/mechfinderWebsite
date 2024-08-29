@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="bg-black/30 backdrop-blur-md flex justify-center items-center py-4">
+    <div className="bg-gradient-to-r from-[#5f9ead] via-[#96c2cb] via-[#96c2cb] via-[#d4e1e5] to-[#8bbbc7] font-Poppins backdrop-blur-md flex justify-center items-center py-4">
       {/* <NavLink to="/">
         <img
           className="w-20"
@@ -11,14 +11,34 @@ const Header = () => {
           alt="Logo"
         />
       </NavLink> */}
-      <div className="ml-6 text-black text-lg">
+      <div className="ml-6 text-white text-lg">
         <NavLink
           to="/"
           className={({ isActive }) =>
-            isActive ? "font-bold" : ""
+            isActive ? "text-[black] font-medium" : ""
           }
         >
           Home
+        </NavLink>
+      </div>
+      <div className="ml-6 text-white text-lg">
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive ? "text-[black] font-medium" : ""
+          }
+        >
+          About
+        </NavLink>
+      </div>
+      <div className="ml-6 text-white text-lg">
+        <NavLink
+          to="/third"
+          className={({ isActive }) =>
+            isActive ? "text-[black] font-medium" : ""
+          }
+        >
+          Third
         </NavLink>
       </div>
     </div>
