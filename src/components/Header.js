@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="bg-gradient-to-r from-[#5f9ead] via-[#96c2cb] via-[#96c2cb] via-[#d4e1e5] to-[#8bbbc7] font-Poppins backdrop-blur-md flex justify-center items-center py-4">
+    <div className="bg-gradient-to-r from-[#b3c2d5] via-[#bfcedf] via-[#bfcedf] via-[#bfcedf] to-[#b3c2d5] font-Poppins backdrop-blur-md flex justify-center items-center py-4">
       {/* <NavLink to="/">
         <img
           className="w-20"
