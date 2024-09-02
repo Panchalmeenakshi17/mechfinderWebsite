@@ -23,13 +23,13 @@ const Header = () => {
     <div
       className={`fixed top-0 w-full transition-colors duration-300 ease-in-out ${
         isScrolled
-          ? "bg-black backdrop-blur-none z-50"
-          : "bg-gradient-to-r from-[#9fbacd] via-[#9fbacd] via-[#a4b5cf] via-[#a7b3cd] to-[#a7b3cd] backdrop-blur-md"
+          ? " backdrop-blur-2xl text-black z-50"
+          : "bg-gradient-to-r from-[#151c2d]   via-[#151c2d]   to-[#161826] backdrop-blur-md"
       } font-Poppins px-28 py-4 z-10`}
     >
       <div className="flex justify-between items-center">
         <div className="flex">
-          <div className="ml-6 text-white text-lg">
+          <div className="ml-6 text-indigo-200 text-lg">
             <NavLink
               to="/"
               className={({ isActive }) =>
@@ -39,7 +39,7 @@ const Header = () => {
               Home
             </NavLink>
           </div>
-          <div className="ml-6 text-white text-lg">
+          <div className="ml-6 text-indigo-200 text-lg">
             <NavLink
               to="/about"
               className={({ isActive }) =>
@@ -49,9 +49,9 @@ const Header = () => {
               About
             </NavLink>
           </div>
-          <div className="ml-6 text-white text-lg">
+          <div className="ml-6 text-indigo-200 text-lg">
             <NavLink
-              to="/services"
+              to="/Service"
               className={({ isActive }) =>
                 isActive ? "text-indigo-600 font-semibold" : ""
               }
@@ -59,7 +59,7 @@ const Header = () => {
               Services
             </NavLink>
           </div>
-          <div className="ml-6 text-white text-lg">
+          <div className="ml-6 text-indigo-200 text-lg">
             <NavLink
               to="/contact"
               className={({ isActive }) =>
@@ -74,7 +74,7 @@ const Header = () => {
           <NavLink
             to="/signup"
             className={({ isActive }) =>
-              isActive ? "text-indigo-600 font-semibold bg-indigo-500 px-4 py-2 rounded" : "text-white bg-indigo-500 hover:bg-indigo-700  transition ease-in-out px-4 py-2 rounded-md"
+              isActive ? "text-indigo-600 font-semibold bg-indigo-500 px-4 py-2 rounded" : "text-indigo-200 bg-indigo-500 hover:bg-indigo-700  transition ease-in-out px-4 py-2 rounded-md"
             }
           >
             Sign Up
@@ -82,7 +82,7 @@ const Header = () => {
           <NavLink
             to="/signup"
             className={({ isActive }) =>
-              isActive ? "text-[black] font-medium bg-indigo-500 px-4 py-2 rounded" : "text-white ml-5 bg-indigo-500  hover:bg-indigo-700 transition ease-in-out px-4 py-2 rounded-md"
+              isActive ? "text-[black] font-medium bg-indigo-500 px-4 py-2 rounded" : "text-indigo-200 ml-5 bg-indigo-500  hover:bg-indigo-700 transition ease-in-out px-4 py-2 rounded-md"
             }
           >
             Log In

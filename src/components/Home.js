@@ -112,28 +112,61 @@
 // export default Home;
 import React, { useState, useEffect } from "react";
 import { Parallax } from "react-parallax";
-import About from "./About";
 import Header from "./Header";
 import Below from "./Below";
 import Third from "./Third";
 
 const backgroundImages = [
-  "https://i.pinimg.com/564x/dd/bc/f5/ddbcf5e920a9423b76950a925da00efa.jpg",
+  // "https://i.pinimg.com/564x/dd/bc/f5/ddbcf5e920a9423b76950a925da00efa.jpg",
+  "https://i.pinimg.com/564x/00/f3/16/00f316692de75946c24e1cf077faa519.jpg"
   // Other background images if needed
 ];
 
 const floatingImages = [
-  "https://i.pinimg.com/564x/2d/eb/e8/2debe867fa196f70cc97ee9ea27f1ef1.jpg", // Replace with your image URLs
+  "https://i.pinimg.com/564x/2d/eb/e8/2debe867fa196f70cc97ee9ea27f1ef1.jpg", 
   'https://i.pinimg.com/564x/e9/a1/69/e9a16935a42822e76bac00848e61ed5f.jpg',
   "https://i.pinimg.com/564x/1f/a2/e9/1fa2e958959281529234c695116abf61.jpg",
   "https://i.pinimg.com/564x/7a/1c/c4/7a1cc44e8356752747500a5271cd4325.jpg",
   'https://content3.jdmagicbox.com/comp/pune/c5/020pxx20.xx20.190405110327.h3c5/catalogue/super-fast-puncher-service-pune-1mcbssikwt.jpg',
   'https://i.pinimg.com/564x/a5/37/29/a537294a019964af7b759836dd11cfff.jpg',
   'https://images.bhaskarassets.com/web2images/521/2022/03/28/orig_orig1641775050_1648419455.jpg',
-  // Add more images if needed
 ];
 
-const words = ["plumber", "mechanic", "electrician", "service provider", "labourer", "worker", "meal-maker", "House Cleaner"];
+const words = [
+  "plumber",
+  "mechanic",
+  "electrician",
+  "service provider",
+  "labourer",
+  "worker",
+  "meal-maker",
+  "House Cleaner",
+  "puncture-worker",
+  "carpenter",
+  "painter",
+  "gardener",
+  "cleaner",
+  "welder",
+  "mason",
+  "roofing-specialist",
+  "hvac-technician",
+  "landscaper",
+  "tiler",
+  "construction-worker",
+  "tile-installer",
+  "furniture-maker",
+  "sanitation-worker",
+  "security-guard",
+  "tailor",
+  "beautician",
+  "driver",
+  "cook-chef",
+  "photographer",
+  "car-washer",
+  "packager",
+  "other"
+];
+
 
 const Home = () => {
   const [bgImage, setBgImage] = useState(backgroundImages[0]);
@@ -151,9 +184,9 @@ const Home = () => {
         const nextIndex = (currentIndex + 1) % backgroundImages.length;
         return backgroundImages[nextIndex];
       });
-    }, 3000); // Change every 3 seconds
+    }, 3000);
 
-    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   // Typing Effect
@@ -162,40 +195,38 @@ const Home = () => {
       const currentWord = words[currentWordIndex];
       if (isDeleting) {
         setDisplayText((prev) => prev.slice(0, -1));
-        setTypingSpeed(50); // Faster when deleting
+        setTypingSpeed(50);
       } else {
         setDisplayText((prev) => currentWord.slice(0, prev.length + 1));
-        setTypingSpeed(100); // Normal speed when typing
+        setTypingSpeed(100);
       }
 
-      // When word is fully typed or deleted, toggle typing/deleting
       if (!isDeleting && displayText === currentWord) {
-        setTimeout(() => setIsDeleting(true), 2000); // Wait 2 seconds before deleting
+        setTimeout(() => setIsDeleting(true), 2000);
       } else if (isDeleting && displayText === "") {
         setIsDeleting(false);
-        setCurrentWordIndex((prev) => (prev + 1) % words.length); // Move to next word
+        setCurrentWordIndex((prev) => (prev + 1) % words.length);
       }
     };
 
     const typingInterval = setTimeout(handleTyping, typingSpeed);
 
-    return () => clearTimeout(typingInterval); // Cleanup interval
+    return () => clearTimeout(typingInterval);
   }, [displayText, isDeleting, typingSpeed, currentWordIndex]);
 
   // Floating Image Interval
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentFloatingImageIndex((prevIndex) => (prevIndex + 1) % floatingImages.length);
-    }, 3000); // Change every 3 seconds
+    }, 3000);
 
-    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
     <>
       <Header />
       <div className="relative h-screen overflow-hidden">
-        {/* Background Images */}
         <div className="background-container absolute inset-0">
           <div
             className="background-image w-full h-full"
@@ -203,17 +234,14 @@ const Home = () => {
           />
         </div>
 
-        {/* Content */}
         <Parallax
           bgImage={bgImage}
           bgImageAlt="Background"
-          strength={300} // Reduced strength for a subtler effect
+          strength={300}
           className="relative h-screen flex items-center justify-left"
         >
-          {/* Full-Screen Overlay */}
           <div className="absolute h-screen w-screen inset-0 bg-[#9fbacd] bg-opacity-10 backdrop-blur-md z-0"></div>
 
-          {/* Blurred Background Shape */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div
               className="absolute inset-0"
@@ -221,13 +249,12 @@ const Home = () => {
                 backgroundImage: `url(${bgImage})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                filter: "blur(8px)", // Adjust blur intensity
+                filter: "blur(8px)",
                 zIndex: -1,
               }}
             ></div>
           </div>
 
-          {/* Content */}
           <div className="relative font-Poppins bg-red-0 px-10 z-10 text-left p-4 flex items-center justify-left">
             <div className="w-1/2 ml-20 bg-yellow-0">
               <h1 className="text-6xl font-medium text-white text-left">
@@ -239,27 +266,26 @@ const Home = () => {
             </div>
             <div className="w-1/2 flex justify-center relative">
               <div className="floating-wrapper relative">
-                {/* CSS Custom Shape Background */}
                 <div
-                  className="absolute rounded-full inset-0 flex items-center justify-center blur-2xl shadow-2xl shadow-[#ce7eff] bg-[#4f46e5] opacity-70"
+                  className="absolute rounded-full inset-0 flex items-center justify-center blur-2xl shadow-2xl shadow-[#ce7eff] bg-[#4f46e5] opacity-70 animate-morph"
                   style={{
                     zIndex: -1,
                   }}
                 ></div>
-                {/* Floating Image */}
                 <img
                   src={floatingImages[currentFloatingImageIndex]}
                   alt="Service Image"
-                  className="floating-image rounded-full shadow-2xl shadow-[#0d0d0d] relative z-10 w-[400px] h-[400px] object-cover"
+                  className="floating-image rounded-full shadow-2xl shadow-[#0d0d0d] relative z-10 w-[400px] h-[400px] object-cover animate-morph"
                 />
               </div>
             </div>
+            
           </div>
+          
         </Parallax>
       </div>
+      <Third />
       <Below />
-      {/* <About /> */}
-      <Third/>
     </>
   );
 };
