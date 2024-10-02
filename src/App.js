@@ -43,7 +43,10 @@ import Footer from './components/Footer';
 import Next from './components/Next';
 import Service from './components/Service';
 import Loader from './components/Loader'; // Import Loader
-
+import Allshops from './components/Allshops';
+import IndividualList from './components/IndividualList';
+import MyQuries from './components/MyQuries';
+import Contact from './components/Contact';
 // Loader handler component
 const LoaderHandler = ({ children }) => {
   const [loading, setLoading] = useState(false);
@@ -75,8 +78,12 @@ function App() {
           <Route path="/Third" element={<Third />} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Next" element={<Next />} />
+          <Route path="/Contact" element={<Contact />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Service" element={<Service />} />
+          <Route path="/Allshops" element={<Allshops />} />
+          <Route path="/MyQuries" element={<MyQuries />} />
+          <Route path="/IndividualList" element={<IndividualList />} />
         </Routes>
         <Footer />
       </LoaderHandler>

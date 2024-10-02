@@ -61,7 +61,7 @@ const Header = () => {
           </div>
           <div className="ml-6 text-indigo-200 text-lg">
             <NavLink
-              to="/contact"
+              to="/Contact"
               className={({ isActive }) =>
                 isActive ? "text-indigo-600 font-semibold" : ""
               }
@@ -80,7 +80,7 @@ const Header = () => {
             Sign Up
           </NavLink>
           <NavLink
-            to="/signup"
+            to="/Login"
             className={({ isActive }) =>
               isActive ? "text-[black] font-medium bg-indigo-500 px-4 py-2 rounded" : "text-indigo-200 ml-5 bg-indigo-500  hover:bg-indigo-700 transition ease-in-out px-4 py-2 rounded-md"
             }
