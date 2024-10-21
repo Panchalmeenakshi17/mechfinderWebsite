@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Download from "./Download";
-import Testimonials from "./Testimonials";
+import Testimonials from "./Marquee";
 
 const Neww = () => {
   const items = [
@@ -71,11 +71,11 @@ const Neww = () => {
             </div>
           </div>
         </div>
-        <div className="p-16">
-          <h1 className="font-semibold font-Poppins text-3xl">
+        <div className="md:p-16 p-4">
+          <h1 className="font-semibold font-Poppins text-2xl md:text-3xl">
             Need any Plumber or Electrician or maybe a Cook?
           </h1>
-          <div className="bg-blue-00 w-full h-[450px] justify-center gap-20 flex mt-20">
+          <div className="bg-blue-00 w-full md:h-[450px] justify-center gap-20 md:flex mt-8 md:mt-20">
             {/* <div className="bg-blue-500 w-1/4 rounded-5xl h-1/2 shadow-2xl shadow-black flex flex-col items-center justify-center">
       <img src="https://i.pinimg.com/564x/75/94/bc/7594bc73658dfa5819610d6b1aa0b226.jpg" alt="Example" className="mb-4 rounded-xl w-1/2 h-1/2" />
       <h1 className=" font-Poppins text-xl font text-white font-semibold">Register as Individual</h1>
@@ -85,18 +85,22 @@ const Neww = () => {
       <img src="https://i.pinimg.com/564x/78/44/80/784480366a8cf77bb0f7f25272b2b47d.jpg" alt="Example" className="mb-4 rounded-xl w-1/2 h-1/2" />
       <h1 className=" font-Poppins text-xl font text-white font-semibold">Register as Shop Owner</h1>
     </div> */}
-
-            <div className="bg-blue-500 hover:scale-105 transition-transform duration-300 hover:bg-blue-600 transition ease-in-out cursor-pointer  w-1/4 rounded-5xl h-2/3 shadow-2xl shadow-black flex flex-col items-center justify-center">
-              <img
-                src="https://i.pinimg.com/564x/77/75/5e/77755e565ef7ddbff2546231cd8732bf.jpg"
-                alt="Example"
-                className="mb-4 rounded-xl w-1/2 h-1/2"
-              />
-              <h1 className=" font-Poppins text-xl font text-white">
-                Register as User
-              </h1>
-            </div>
-            <div className="mt-1 h-full w-1/2">
+            <NavLink
+              to="/SignUp"
+              className="bg-blue-500 md:w-1/5 md:mb-20 hover:bg-blue-600 hover:scale-105 transition-transform duration-300 rounded-5xl h-[300px] shadow-2xl shadow-black flex flex-col items-center justify-center  ease-in-out   hover:cursor-pointer"
+            >
+              <div className="  shadow-black flex flex-col items-center justify-center">
+                <img
+                  src="https://i.pinimg.com/564x/77/75/5e/77755e565ef7ddbff2546231cd8732bf.jpg"
+                  alt="Example"
+                  className="mb-4 rounded-xl   h-1/2"
+                />
+                <h1 className=" font-Poppins text-xl font-semibold text-white">
+                  Register as User
+                </h1>
+              </div>
+            </NavLink>
+            <div className="md:mt-1 mt-10  h-full md:w-1/2">
               <h1 className="font-Poppins text-2xl font-semibold">
                 Register as User
               </h1>
@@ -141,7 +145,7 @@ const Neww = () => {
             </div>
           </div>
           <div
-            className="rounded-bl-4xl mt-10 rounded-tr-6xl shadow-xl shadow-gray-400 h-[600px] relative"
+            className="md:rounded-bl-4xl rounded-bl-3xl rounded-tr-4xl mt-7 md:mt-10 md:rounded-tr-6xl shadow-xl shadow-gray-400 md:h-[600px] relative"
             style={{
               backgroundImage: `
       linear-gradient(to right, #818df8dd, #818df8eb,#818df84d), 
@@ -150,23 +154,23 @@ const Neww = () => {
               backgroundPosition: "center",
             }}
           >
-            <div className="p-14">
-              <h1 className="font-semibold animate-h1 font-Poppins text-xl">
+            <div className=" p-6 md:p-14">
+              <h1 className="font-semibold animate-h1 font-Poppins md:text-xl">
                 Looking for any Work?
               </h1>
-              <h2 className="font-semibold animate-h2 font-Poppins text-3xl">
+              <h2 className="font-semibold animate-h2 font-Poppins text-2xl md:text-3xl">
                 or wanna make your shop grow n' Famous?
               </h2>
-              <div className="mt-20 flex justify-start gap-6">
+              <div className="md:mt-20 mt-5 md:flex justify-start gap-6">
                 <NavLink
                   to="/SignUp"
-                  className="bg-white w-1/5 hover:scale-105 transition-transform duration-300 rounded-5xl h-[300px] shadow-2xl shadow-black flex flex-col items-center justify-center  ease-in-out hover:bg-gray-200 hover:cursor-pointer"
+                  className="bg-white md:w-1/5 hover:scale-105 transition-transform duration-300 rounded-5xl h-[300px] shadow-2xl shadow-black flex flex-col items-center justify-center  ease-in-out hover:bg-gray-200 hover:cursor-pointer"
                 >
-                  <div className="  w- rounded-5xl h-[280px]  flex flex-col items-center justify-center transition duration-300 ease-in-out  hover:cursor-pointer">
+                  <div className=" rounded-5xl md:h-[280px]  flex flex-col items-center justify-center transition duration-300 ease-in-out  hover:cursor-pointer">
                     <img
                       src="https://i.pinimg.com/564x/75/94/bc/7594bc73658dfa5819610d6b1aa0b226.jpg"
                       alt="Example"
-                      className="mb-4 rounded-xl h-1/2"
+                      className="mb-4 rounded-xl  h-1/2"
                     />
                     <h1 className="font-Poppins text-lg text-center text-blue-500 font-semibold">
                       Register as Individual
@@ -176,7 +180,7 @@ const Neww = () => {
 
                 <NavLink
                   to="/SignUp"
-                  className="bg-white w-1/5 hover:scale-105 transition-transform duration-300 rounded-5xl h-[300px] shadow-2xl shadow-black flex flex-col items-center justify-center ease-in-out hover:bg-gray-200 hover:cursor-pointer"
+                  className="bg-white mt-6 md:w-1/5 hover:scale-105 transition-transform duration-300 rounded-5xl h-[300px] shadow-2xl shadow-black flex flex-col items-center justify-center ease-in-out hover:bg-gray-200 hover:cursor-pointer"
                 >
                   <div className="rounded-5xl h-[280px]  flex flex-col items-center justify-center transition duration-300 ease-in-out hover:bg-gray-200 hover:cursor-pointer">
                     <img
@@ -189,7 +193,7 @@ const Neww = () => {
                     </h1>
                   </div>
                 </NavLink>
-                <div className="bg-[#090909d0] hover:scale-105 transition-transform duration-300 backdrop-blur-md w-[340px] rounded-3xl h-[400px]  font-Poppins md:-mt-10 shadow-2xl shadow-black flex flex-col items-center justify-center 0 ease-in-out hover:cursor-pointer">
+                <div className="bg-[#090909d0] hover:scale-105 transition-transform duration-300 backdrop-blur-md md:w-[340px] rounded-3xl md:h-[400px] md:p-0 p-4 mt-6 font-Poppins md:-mt-10 shadow-2xl shadow-black flex flex-col items-center justify-center 0 ease-in-out hover:cursor-pointer">
                   <h1 className="font-Poppins text-xl text-left text-blue-700 font-semibold">
                     Register as Individual
                   </h1>
@@ -214,7 +218,7 @@ const Neww = () => {
                   </ul>
                 </div>
 
-                <div className="bg-[#090909d0] hover:scale-105 transition-transform duration-300 backdrop-blur-md w-[340px] rounded-3xl h-[400px]  font-Poppins md:-mt-10 shadow-2xl shadow-black flex flex-col items-center justify-center   ease-in-out hover:cursor-pointer">
+                <div className="bg-[#090909d0] hover:scale-105 transition-transform duration-300 backdrop-blur-md md:w-[340px] rounded-3xl md:h-[400px] md:p-0 p-4 mt-6 font-Poppins md:-mt-10 shadow-2xl shadow-black flex flex-col items-center justify-center   ease-in-out hover:cursor-pointer">
                   <h1 className="font-Poppins text-center text-xl text-blue-700 font-semibold">
                     Register as Shop Owner
                   </h1>
@@ -242,7 +246,7 @@ const Neww = () => {
           </div>
         </div>
       </div>
-      <Testimonials />
+<Testimonials/>
       <Download />
     </>
   );

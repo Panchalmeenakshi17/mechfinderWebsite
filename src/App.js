@@ -49,6 +49,9 @@ import MyQuries from './components/MyQuries';
 import Contact from './components/Contact';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import Caraousal from './components/Caraousal';
+import Below from './components/Below';
+import Heroabout from './components/Heroabout';
+import MultiIncrementor from './components/NumberIncrementer';
 // Loader handler component
 const LoaderHandler = ({ children }) => {
   const [loading, setLoading] = useState(false);
@@ -89,6 +92,9 @@ function App() {
           <Route path="/MyQuries" element={<MyQuries />} />
           <Route path="/IndividualList" element={<IndividualList />} />
           <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+          <Route path="/Below" element={<Below />} />
+          <Route path="/Heroabout" element={<Heroabout />} />
+          <Route path="/MultiIncrementor" element={<MultiIncrementor />} />
         </Routes>
         <Footer />
       </LoaderHandler>

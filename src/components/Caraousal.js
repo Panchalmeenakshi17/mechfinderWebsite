@@ -164,7 +164,7 @@ const Carousel = () => {
      </div>
       <Header />
       <div id="carousel" className="relative w-full mb-10">
-        <div className="relative h-56 overflow-hidden shadow-2xl shadow-[#4a4a4a] rounded-bl-4xl rounded-br-4xl md:h-[600px]">
+        <div className="relative h-96 overflow-hidden shadow-2xl shadow-[#4a4a4a] rounded-br-4xl md:rounded-bl-4xl md:rounded-br-4xl md:h-[600px]">
           {images.map((img, index) => (
             <div
               key={index}
@@ -189,29 +189,29 @@ const Carousel = () => {
 
         {/* Updated Caption Positioning and Styling */}
         <div
-          className="absolute top-64 w-2/3 backdrop-blur-0 left-20 font-Poppins transform -translate-y-1/2 text-white text-3xl"
+          className="absolute md:mt-0 mt-24 md:p-0 p-4 -top-0 md:top-64 md:w-2/3 w-full backdrop-blur-0 md:left-20 font-Poppins transform md:-translate-y-1/2 text-white text-xl md:text-3xl"
           style={{
             transform: `translateY(${scrollY * 0.2}px)`, // Parallax effect, caption moves slower
             transition: "transform 0.5s ease-out", // Smooth transition for text
           }}
         >
           {captions[currentIndex]}
-          <h1 className=" text-4xl mt-10 font-medium text-indigo-500">
+          <h1 className=" text-lg md:text-4xl md:mt-10 font-medium text-indigo-500">
             Example services: {displayText}{" "}
           </h1>
-          <div className="flex w-1/2 mt-5 flex-col font-Poppins items-left ">
+          <div className="flex w-2/3 md:w-1/2 mt-5 flex-col font-Poppins items-left ">
         <NavLink
           to="https://play.google.com/store/apps/details?id=com.mechfinder&hl=en_IN"
-          className="bg-gradient-to-r from-green-500 to bg-green-600 hover:bg-green-600 text-white py-3 px-5 rounded-full flex items-center space-x-3 transition duration-300"
+          className="bg-gradient-to-r w-full md:p-0 p-1 from-green-500 to bg-green-600 hover:bg-green-600 text-white md:py-3 md:px-5 rounded-full flex items-center space-x-3 transition duration-300"
           target="_blank"
           rel="noopener noreferrer"
         >
           <img
             src="./images/p.jpg"
             alt="Google Play Store"
-            className="w-8 h-8"
+            className="md:w-8 w-6 h-6 md:h-8"
           />
-          <span className="text-lg  font-semibold">Download Mechfinder from Play Store Now!</span>
+          <span className="md:text-lg  text-xs font-semibold">Download Mechfinder from Play Store Now!</span>
         </NavLink>
  
       </div>

@@ -159,12 +159,14 @@
 // };
 
 // export default About;
-import React from "react";
+import React , { useRef }from "react";
 import { Parallax } from "react-parallax";
 import Header from "./Header";
-
+import Below from "./Below"
+import Heroabout from "./Heroabout";
+import NumberIncrementer from "./NumberIncrementer";
 const backgroundImages = [
-  "https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1496053104232-e7c7a99dafc0?q=80&w=1889&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   // Add more background images if needed
 ];
 
@@ -202,7 +204,13 @@ const About = () => {
   const [displayText, setDisplayText] = React.useState("");
   const [isDeleting, setIsDeleting] = React.useState(false);
   const [typingSpeed, setTypingSpeed] = React.useState(100);
+  const heroRef = useRef(null); // Create a ref for the HeroAbout section
 
+  const scrollToHero = () => {
+    if (heroRef.current) {
+      heroRef.current.scrollIntoView({ behavior: 'smooth' }); // Scroll to the HeroAbout section smoothly
+    }
+  };
   // Background Image Interval
   React.useEffect(() => {
     const intervalId = setInterval(() => {
@@ -243,27 +251,33 @@ const About = () => {
 
   return (
     <>
-      <Header />
+      {/* <Header />
       <div className="relative h-screen overflow-hidden">
-        <Parallax
-          bgImage={bgImage}
-          bgImageAlt="Background"
-          strength={300}
-          className="relative h-screen flex w items-center justify-center"
-        >
-          <div className="absolute inset-0 bg-black opacity-50"></div>{" "}
+        <div
+          // bgImage={bgImage}
+          // bgImageAlt="Background"
+          // strength={300}
+          className="relative h-[400px] bg-indigo-300 flex w items-center justify-start"
+        > */}
+          {/* <div
+  className="absolute inset-0  "
+  style={{
+    background: 'linear-gradient(to right, #000000, #000000ff)' // Aap yahan apne colors change kar sakte hain
+  }}
+></div> */}
+
           {/* Overlay */}
-          <div className="relative  backdrop-blur-md flex h-screen w-full">
-            <div className="w-1/2 flex justify-center items-center overflow-hidden">
-              <div className="marquee-container flex items-center">
-                <div className="marquee">
+          {/* <div className="relative  bg-yellow-00  flex h-screen w-full"> */}
+            {/* <div className="w-  bg-yellow-400  flex justify- items- overflow-hidden"> */}
+              {/* <div className="marquee-container flex items-center"> */}
+                {/* <div className="marquee">
                   {fixedImages.map((imgSrc, index) => (
                     <div
                       key={index}
                       className="relative"
                       style={{
-                        width: "400px",
-                        height: "300px",
+                        width: "300px",
+                        height: "200px",
                         margin: "0 10px",
                       }}
                     >
@@ -271,7 +285,7 @@ const About = () => {
                         src={imgSrc}
                         alt={`Fixed Image ${index}`}
                         className="w-full h-full object-cover rounded-lg shadow-lg"
-                        style={{ height: "300px", width: "400px" }}
+                        style={{ height: "200px", width: "300px" }}
                       />
                     </div>
                   ))}
@@ -282,8 +296,8 @@ const About = () => {
                       key={index + fixedImages.length}
                       className="relative"
                       style={{
-                        width: "400px",
-                        height: "300px",
+                        width: "300px",
+                        height: "200px",
                         margin: "0 10px",
                       }}
                     >
@@ -291,37 +305,67 @@ const About = () => {
                         src={imgSrc}
                         alt={`Fixed Image ${index}`}
                         className="w-full h-full object-cover rounded-lg shadow-lg"
-                        style={{ height: "300px", width: "400px" }}
+                        style={{ height: "200px", width: "300px" }}
                       />
                     </div>
                   ))}
-                </div>
-              </div>
-            </div>
+                </div> */}
+              {/* </div> */}
+            {/* </div> */}
 
-            <div className=" w-1/3 bg-eal-400  p-10 text-white flex items-center justify-left">
-              <div className=" p-10">
-                <h1 className="  text-indigo-300 font-Poppins font-medium text-7xl">
+            {/* <div className="h-[500px] bg-teal-400  p-10 text-white flex items-center justify-left"> */}
+              {/* <div className=" h-[410px] mt-40 bg-slate-50 p-10">
+                <div className=" mt-20">
+                <h1 className="  text-indigo-300 font-Poppins font- text-2xl">
                   {" "}
-                  Discover
+                  About us
                 </h1>
-                <h2 className=" font-Poppins text-5xl">
-                  your street in a new way
+                <h2 className=" bg-yellow-10 py-2 w-full font-serif   text-5xl">
+                Discover your street in a new way
                 </h2>
                 <div className="glow-on-hover mt-10  font-Poppins"  >
                   <h1 className=" text-white font-Poppins text-center   py-3">
 Explore more
                   </h1>
                 </div>
-              </div>
+
+                </div>
+              </div> */}
               {/* <h2 className="text-4xl mt-4">{displayText}</h2> */}
              
-            </div>
+            {/* </div> */}
             
-          </div>
-        </Parallax>
+          {/* </div>
+        </div>
       </div>
-
+      <Below/> */}
+      <Header/>
+<div className="md:relative  md:h-[450px] h-full overflow-hidden md:flex">
+        <div className="relative  flex-1 md:flex flex-col justify-center items-start p-6 md:p-20 bg-white">
+          <h1 className="mt-14 md:mt-0 font-Poppins font-semibold md:text-2xl">We are <span className="text-indigo-500 "> Mechfinder</span></h1>
+          <h2 className="bg-yellow-10 py-2 w-full font-serif  text-3xl md:text-5xl">
+            Discover your street in a new way
+          </h2>
+          <div className="bg-black md:px-5  hover:scale-95 transition ease-in-out  md:mt-10 font-Poppins" onClick={scrollToHero}>
+            <h1 className="text-white font-Poppins text-center py-2 md:py-3">
+              Explore more
+            </h1>
+          </div>
+        </div>
+        <div className="relative flex-1">
+          <img
+            src="https://i.pinimg.com/564x/6c/96/8b/6c968be6b5d485129fe6ab3d3c2aef87.jpg" // Replace with your image URL
+            alt="Right Side"
+            className="object-cover w-full h-" // Adjust object-cover and h-full based on your design preference
+          />
+        </div>
+      </div>
+      <div ref={heroRef}>
+        
+      <Heroabout/>
+      {/* <NumberIncrementer  /> */}
+        </div> {/* Attach the ref here */}
+      <Below />
       {/* CSS for marquee animation */}
       <style jsx>{`
         .marquee-container {
