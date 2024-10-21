@@ -386,37 +386,45 @@ const Home = () => {
   return (
     <>
       <Header />
+      
       <div className="relative h-screen overflow-hidden">
-        <div className="absolute inset-0">
-          <video
+          {/* <div className="  whitespace-nowrap bg-gray-100 py-2"> */}
+      
+      {/* </div> */}
+        <div className="absolute inset-0 ">
+          {/* <video
             autoPlay
             muted
             loop
-            className="absolute w-full h-full object-cover"
-            src="ss.mp4" // Replace with the path to your video file
+            className="absolute w-full h-4/5 object-cover"
+            src="https://cdn.pixabay.com/video/2015/12/11/1635-148614401_medium.mp4" // Replace with the path to your video file
             type="video/mp4"
-          />
+          /> */}
+          <img src="https://images.unsplash.com/photo-1481026469463-66327c86e544?q=80&w=1816&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""  className=" h-full w-full         
+          "/>
         </div>
 
+       
         <Parallax
           bgImage="none" // No background image needed
           bgImageAlt="Background"
           strength={300}
           className="relative h-screen flex items-center justify-left"
         >
-          <div className="absolute h-screen w-screen inset-0 bg-[#9fbacd] bg-opacity-10 backdrop-blur-sm z-0"></div>
+          {/* <div className="absolute h-3/4 w-screen inset-0 bg-[#9fbacd] bg-opacity-10 backdrop-blur-sm z-0"></div> */}
 
           <div className="relative font-Poppins bg-red-0 px-10 z-10 text-left p-4 flex items-center justify-left">
-            <div className="w-1/2 ml-20 bg-yellow-0">
-              <h1 className="text-6xl font-medium text-white text-left">
-                Facing a lot of difficulties in Finding any <span className="text-indigo-500">{displayText}</span>?
+            <div className="w-2/2 ml-20 bg-yellow-0">
+              <h1 className="text-6xl font-medium text-blue-400 text-left">
+                Facing a lot of difficulties in Finding any 
               </h1>
+              <h1 className=" text-6xl font-bold text-indigo-500">{displayText} ? </h1>
               <h2 className="text-2xl mt-10 font-medium text-white text-left">
                 Discover top-rated service providers in your area and get instant quotes.
               </h2>
             </div>
             <div className="w-1/2 flex justify-center relative">
-              <div className="floating-wrapper relative">
+              {/* <div className="floating-wrapper relative">
                 <div
                   className="absolute rounded-full inset-0 flex items-center justify-center blur-2xl shadow-2xl shadow-[#ce7eff] bg-[#4f46e5] opacity-70 animate-morph"
                   style={{
@@ -428,9 +436,16 @@ const Home = () => {
                   alt="Service Image"
                   className="floating-image rounded-full shadow-2xl shadow-[#0d0d0d] relative z-10 w-[400px] h-[400px] object-cover animate-morph"
                 />
-              </div>
+              </div> */}
             </div>
           </div>
+          <div className="flex   bg-gray-00">
+      <div className="animate-marquee  rounded-2xl px-6 py-4 inline-block text-white text-xl font-semibold  font-mono whitespace-nowrap">
+        <span className="mx-4 bg-blue-500 rounded-2xl py-6 px-4">This is a scrolling marquee text</span>
+        <span className="mx-4 bg-blue-500 rounded-2xl py-6 px-4">This is a scrolling marquee text</span>
+        <span className="mx-4 bg-blue-500 rounded-2xl py-6 px-4">This is a scrolling marquee text</span>
+      </div>
+    </div>
         </Parallax>
       </div>
       <Third />

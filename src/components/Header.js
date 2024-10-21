@@ -23,13 +23,24 @@ const Header = () => {
     <div
       className={`fixed top-0 w-full transition-colors duration-300 ease-in-out ${
         isScrolled
-          ? " backdrop-blur-2xl text-black z-50"
-          : "bg-gradient-to-r from-[#151c2d]   via-[#151c2d]   to-[#161826] backdrop-blur-md"
+          ? " backdrop-blur-2xl bg-[#000000f4] text-black z-50"
+          : " backdrop-blur-md"
       } font-Poppins px-28 py-4 z-10`}
     >
       <div className="flex justify-between items-center">
         <div className="flex">
-          <div className="ml-6 text-indigo-200 text-lg">
+          <div className="ml-6 text-indigo-200 text-xl">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "text-indigo-600 font-semibold" : ""
+              }
+            >
+              MechFinder
+            </NavLink>
+          </div>
+          <div className="ml-6 text-indigo-200 text-sm">
+
             <NavLink
               to="/"
               className={({ isActive }) =>
@@ -38,8 +49,8 @@ const Header = () => {
             >
               Home
             </NavLink>
-          </div>
-          <div className="ml-6 text-indigo-200 text-lg">
+</div>
+          <div className="ml-6 text-indigo-200 text-sm">
             <NavLink
               to="/about"
               className={({ isActive }) =>
@@ -48,8 +59,9 @@ const Header = () => {
             >
               About
             </NavLink>
+           
           </div>
-          <div className="ml-6 text-indigo-200 text-lg">
+          <div className="ml-6 text-indigo-200 text-sm">
             <NavLink
               to="/Service"
               className={({ isActive }) =>
@@ -59,7 +71,7 @@ const Header = () => {
               Services
             </NavLink>
           </div>
-          <div className="ml-6 text-indigo-200 text-lg">
+          <div className="ml-6 text-indigo-200 text-sm">
             <NavLink
               to="/Contact"
               className={({ isActive }) =>
@@ -69,8 +81,18 @@ const Header = () => {
               Contact
             </NavLink>
           </div>
+          <div className="ml-6 text-indigo-200 text-sm">
+            <NavLink
+              to="/PrivacyPolicy"
+              className={({ isActive }) =>
+                isActive ? "text-indigo-600 font-semibold" : ""
+              }
+            >
+              Privacy Policy
+            </NavLink>
+          </div>
         </div>
-        <div className="text-lg">
+        <div className="text-sm">
           <NavLink
             to="/signup"
             className={({ isActive }) =>

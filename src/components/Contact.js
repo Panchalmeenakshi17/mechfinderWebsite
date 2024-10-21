@@ -190,15 +190,15 @@ const Contact = () => {
     <div
       className="min-h-screen bg-cover bg-center flex flex-col justify-center"
       style={{
-        backgroundImage: `url('https://images.unsplash.com/photo-1491466424936-e304919aada7?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`
+        backgroundImage: `url('https://images.unsplash.com/photo-1605281317010-fe5ffe798166?q=80&w=2044&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`
       }}
     >
       <div className="relative py-3 sm:max-w-xl sm:mx-auto">
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-700 to-#200080-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
-        <div className="text-white relative px-4 py-10 bg-#090082-400 shadow-lg sm:rounded-3xl sm:p-20">
+        <div className="absolute inset-0 bg-gradient-to-r backdrop-blur-md from-[#ffffff25] to-[#ffffff] shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
+        <div className="text-black relative px-4 py-10 bg-#090082-400 shadow-lg sm:rounded-3xl sm:p-20">
           <div className="text-center pb-6">
             <h1 className="text-3xl">Contact Us!</h1>
-            <p className="text-gray-300">
+            <p className="text-gray-900">
               Fill up the form below to send us a message.
             </p>
           </div>

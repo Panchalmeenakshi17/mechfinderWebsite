@@ -1,0 +1,22 @@
+/* src/components/Testimonials.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Move left by half the container width */
+  }
+}
+
+.animate-marquee {
+  display: flex; 
+  animation: marquee 20s linear infinite; /* Adjust duration for speed */
+}
+
+.flex {
+  flex: 0 0 auto; /* Prevent flex items from shrinking */
+}

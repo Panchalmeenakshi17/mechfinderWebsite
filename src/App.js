@@ -47,6 +47,8 @@ import Allshops from './components/Allshops';
 import IndividualList from './components/IndividualList';
 import MyQuries from './components/MyQuries';
 import Contact from './components/Contact';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import Caraousal from './components/Caraousal';
 // Loader handler component
 const LoaderHandler = ({ children }) => {
   const [loading, setLoading] = useState(false);
@@ -62,7 +64,7 @@ const LoaderHandler = ({ children }) => {
 
   return (
     <>
-      {loading && <Loader />} {/* Show loader if loading */}
+      {/* {loading && <Loader />} Show loader if loading */}
       {children} {/* Render child components */}
     </>
   );
@@ -70,10 +72,12 @@ const LoaderHandler = ({ children }) => {
 
 function App() {
   return (
+    <>
     <Router>
       <LoaderHandler>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/Caraousal" element={<Home />} />
+          <Route path="/" element={<Caraousal />} />
           <Route path="/about" element={<About />} />
           <Route path="/Third" element={<Third />} />
           <Route path="/SignUp" element={<SignUp />} />
@@ -84,10 +88,13 @@ function App() {
           <Route path="/Allshops" element={<Allshops />} />
           <Route path="/MyQuries" element={<MyQuries />} />
           <Route path="/IndividualList" element={<IndividualList />} />
+          <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
         </Routes>
         <Footer />
       </LoaderHandler>
     </Router>
+    
+    </>
   );
 }
 
