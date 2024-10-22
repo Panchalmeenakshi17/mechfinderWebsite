@@ -276,7 +276,7 @@ const Testimonials = () => {
           Just Review on our Application and get a chance to Featured by us!
         </h2>
 
-        <div className="relative bg-yellow500 md:py-20 py-5 overflow-hidden">
+        <div className="relative bg-yellow500 md:py-16 py-5 overflow-hidden">
           <button
             className="absolute md:left-0 -left-6 transform -translate-y-1/2 top-1/2 bg-[#5e68f5] text-white px-3 py-1 rounded-lg z-10 font-Poppins -rotate-90"
             onClick={prevSlide}

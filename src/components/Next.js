@@ -146,7 +146,7 @@ const Next = () => {
 
   return (
     <>
-    <div className=' font-Poppins p-28'>
+    <div className=' font-Poppins mt-10 md:mb-20 px-28'>
     <h1 className='   bg-gradient-to-r from-indigo-400 via-indigo-700 to-[#cc89f0] text-transparent bg-clip-text text-center font-semibold text-4xl  '>
         Benefits of Mechfinder
       </h1>

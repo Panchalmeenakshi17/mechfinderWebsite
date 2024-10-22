@@ -1,4 +1,5 @@
 import React from 'react';
+import Faqs from './Faqs';
 
 const features = [
     {
@@ -64,7 +65,8 @@ const FeaturesHighlight = () => {
                 </div>
             </div>
         </section>
-        
+        <Faqs />
+
         </>
     );
 };

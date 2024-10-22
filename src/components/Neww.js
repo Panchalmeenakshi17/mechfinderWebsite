@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Download from "./Download";
 import Testimonials from "./Marquee";
+import Next from "./Next";
 
 const Neww = () => {
   const items = [
@@ -247,6 +248,7 @@ const Neww = () => {
         </div>
       </div>
 <Testimonials/>
+<Next/>
       <Download />
     </>
   );

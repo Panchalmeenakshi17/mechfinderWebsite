@@ -1,17 +1,35 @@
 import React from 'react';
+import Header from './Header';
 
 const PrivacyPolicy = () => {
   const getCurrentDate = () => {
     return new Date().toLocaleDateString();
   };
-
+  const currentDate = new Date().toLocaleDateString('en-IN', {
+    year: 'numeric',
+    day: 'numeric',
+    month: 'long',
+  });
   return (
-    <div className="max-w-3xl mx-auto p-8 text-gray-800">
+    <>
+    <Header/>
+    <div className="  font-Poppins mx-auto  text-gray-800 relative">
+  {/* Slanting blue div */}
+  <div className="bg-gray-900 p-10 py-20 text-white  relative overflow-hidden">
+    {/* <div className="absolute bottom-0 left-0 w-full h-10 bg-[#000000c4] transform skew-y-6"></div> */}
+    <h1 className="text-3xl font-bold z-50">Privacy Policy</h1>
+  <h2 className="text-xl mt-4">Effective Date: {currentDate}</h2>
+    {/* Slanting effect using a pseudo-element */}
+  </div>
+  {/* Section for Effective Date */}
+</div>
+
+    <div className=" mx-auto p-8 font-Poppins text-gray-800">
       {/* Section for Privacy Policy Title and Effective Date */}
-      <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
+      {/* <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
       <p className="mb-8">
         Last updated: <span className="font-semibold">September 30, 2024</span>
-      </p>
+      </p> */}
 
       {/* Introduction Section */}
       <p className="mb-6">
@@ -189,6 +207,7 @@ const PrivacyPolicy = () => {
         </li>
       </ul>
     </div>
+    </>
   );
 };
 

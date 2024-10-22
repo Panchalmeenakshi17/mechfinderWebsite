@@ -1,6 +1,8 @@
 import React from 'react'
 import Header from './Header'
 import New from './New'
+import Third from './Third'
+import Below from './Below'
 
 const Service = () => {
   return (
@@ -10,7 +12,8 @@ const Service = () => {
     helo
    </div>
    <New/>
-   
+   <Third/>
+   <Below/>
    </>
   )
 }

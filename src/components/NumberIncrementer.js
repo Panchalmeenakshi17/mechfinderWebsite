@@ -49,15 +49,15 @@ const Incrementor = ({ title, startNumber, targetNumber, speed, imageUrl }) => {
     }, [ref, startNumber]);
 
     return (
-        <div ref={ref} className="flex flex-col items-center justify-center shadow-2xl md:mt-0 mt-5 md:p-4 bg-[#f6f7fd] rounded-3xl border md:w-96 w-full mx-auto"> {/* Card Container */}
+        <div ref={ref} className="flex flex-col items-center justify-center shadow-2xl md:mt-0 mt-5 md:p-0 bg-[#f6f7fd] rounded-3xl border md:w-80 w-5/6 mx-auto"> {/* Card Container */}
             {/* Image above the title */}
-            <img src={imageUrl} alt={title} className="md:w-48 md:h-40 mb-2 mt-3 w-24 h-20 mx-auto" /> {/* Adjust the size for mobile */}
-            <h3 className="text-lg font-Poppins font-semibold mb-2 mt-4 text-center">{title}</h3> {/* Poppins font applied */}
+            <img src={imageUrl} alt={title} className="md:w-56 md:h-40 mb-2 mt-6 md:mt-5 w-48 h-40 mx-auto" /> {/* Adjust the size for mobile */}
+            <h3 className="md:text-lg text-xl font-Poppins font-semibold mb-2 mt-4 text-center">{title}</h3> {/* Poppins font applied */}
             <div 
-                className="text-4xl font-bold text-indigo-600 rounded-full flex justify-center mt-4 transition-transform duration-500 ease-in-out transform" 
+                className="text-4xl font-bold font-Poppins text-indigo-600 rounded-full flex justify-center mt-4 transition-transform duration-500 ease-in-out transform" 
                 style={{ minWidth: '100px', height: '60px', textAlign: 'center' }} // Fixed height for stability
             >
-                {currentNumber} +
+                {currentNumber}+
             </div>
         </div>
     );

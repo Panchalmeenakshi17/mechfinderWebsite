@@ -29,11 +29,11 @@
 //     >
 //       <div className="flex justify-between items-center">
 //         <div className="flex">
-//           <div className="ml-6 text-indigo-400 text-xl">
+//           <div className="ml-6 text-gray-400 text-xl">
 //             <NavLink
 //               to="/"
 //               className={({ isActive }) =>
-//                 isActive ? "text-indigo-600 font-semibold" : ""
+//                 isActive ? "text-indigo-500 font-semibold" : ""
 //               }
 //             >
 //               MechFinder
@@ -44,7 +44,7 @@
 //             <NavLink
 //               to="/"
 //               className={({ isActive }) =>
-//                 isActive ? "text-indigo-600 font-semibold" : ""
+//                 isActive ? "text-indigo-500 font-semibold" : ""
 //               }
 //             >
 //               Home
@@ -54,7 +54,7 @@
 //             <NavLink
 //               to="/about"
 //               className={({ isActive }) =>
-//                 isActive ? "text-indigo-600 font-semibold" : ""
+//                 isActive ? "text-indigo-500 font-semibold" : ""
 //               }
 //             >
 //               About
@@ -65,7 +65,7 @@
 //             <NavLink
 //               to="/Service"
 //               className={({ isActive }) =>
-//                 isActive ? "text-indigo-600 font-semibold" : ""
+//                 isActive ? "text-indigo-500 font-semibold" : ""
 //               }
 //             >
 //               Services
@@ -75,7 +75,7 @@
 //             <NavLink
 //               to="/Contact"
 //               className={({ isActive }) =>
-//                 isActive ? "text-indigo-600 font-semibold" : ""
+//                 isActive ? "text-indigo-500 font-semibold" : ""
 //               }
 //             >
 //               Contact
@@ -85,7 +85,7 @@
 //             <NavLink
 //               to="/PrivacyPolicy"
 //               className={({ isActive }) =>
-//                 isActive ? "text-indigo-600 font-semibold" : ""
+//                 isActive ? "text-indigo-500 font-semibold" : ""
 //               }
 //             >
 //               Privacy Policy
@@ -96,7 +96,7 @@
 //           <NavLink
 //             to="/signup"
 //             className={({ isActive }) =>
-//               isActive ? "text-indigo-600 font-semibold bg-indigo-500 px-4 py-2 rounded" : "text-indigo-200 bg-indigo-500 hover:bg-indigo-700  transition ease-in-out px-4 py-2 rounded-md"
+//               isActive ? "text-indigo-500 font-semibold bg-indigo-500 px-4 py-2 rounded" : "text-indigo-200 bg-indigo-500 hover:bg-indigo-700  transition ease-in-out px-4 py-2 rounded-md"
 //             }
 //           >
 //             Sign Up
@@ -151,7 +151,7 @@ const Header = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? "text-indigo-600 font-semibold" : ""
+              isActive ? "text-indigo-500 font-semibold" : ""
             }
           >
             MechFinder
@@ -178,7 +178,7 @@ const Header = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? "text-indigo-600 font-semibold ml-6" : "text-indigo-400 ml-6"
+              isActive ? "text-indigo-500 font-semibold ml-6" : "text-gray-400 ml-6"
             }
           >
             Home
@@ -186,7 +186,7 @@ const Header = () => {
           <NavLink
             to="/about"
             className={({ isActive }) =>
-              isActive ? "text-indigo-600 font-semibold ml-6" : "text-indigo-400 ml-6"
+              isActive ? "text-indigo-500 font-semibold ml-6" : "text-gray-400 ml-6"
             }
           >
             About
@@ -194,7 +194,7 @@ const Header = () => {
           <NavLink
             to="/service"
             className={({ isActive }) =>
-              isActive ? "text-indigo-600 font-semibold ml-6" : "text-indigo-400 ml-6"
+              isActive ? "text-indigo-500 font-semibold ml-6" : "text-gray-400 ml-6"
             }
           >
             Services
@@ -202,7 +202,7 @@ const Header = () => {
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              isActive ? "text-indigo-600 font-semibold ml-6" : "text-indigo-400 ml-6"
+              isActive ? "text-indigo-500 font-semibold ml-6" : "text-gray-400 ml-6"
             }
           >
             Contact
@@ -210,7 +210,7 @@ const Header = () => {
           <NavLink
             to="/privacypolicy"
             className={({ isActive }) =>
-              isActive ? "text-indigo-600 font-semibold ml-6" : "text-indigo-400 ml-6"
+              isActive ? "text-indigo-500 font-semibold ml-6" : "text-gray-400 ml-6"
             }
           >
             Privacy Policy
@@ -223,7 +223,7 @@ const Header = () => {
             to="/signup"
             className={({ isActive }) =>
               isActive
-                ? "text-indigo-600 font-semibold bg-indigo-500 px-4 py-2 rounded"
+                ? "text-indigo-500 font-semibold bg-indigo-500 px-4 py-2 rounded"
                 : "text-white bg-indigo-500 hover:bg-indigo-700 transition ease-in-out px-4 py-2 rounded-md"
             }
           >
@@ -258,8 +258,8 @@ const Header = () => {
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "text-indigo-600 font-semibold block mb-4 text-lg"
-                  : "text-indigo-400 block mb-4 text-lg"
+                  ? "text-indigo-500 font-semibold block mb-4 text-lg"
+                  : "text-gray-400 block mb-4 text-lg"
               }
               onClick={() => setIsMenuOpen(false)}
             >
@@ -269,8 +269,8 @@ const Header = () => {
               to="/about"
               className={({ isActive }) =>
                 isActive
-                  ? "text-indigo-600 font-semibold block mb-4 text-lg"
-                  : "text-indigo-400 block mb-4 text-lg"
+                  ? "text-indigo-500 font-semibold block mb-4 text-lg"
+                  : "text-gray-400 block mb-4 text-lg"
               }
               onClick={() => setIsMenuOpen(false)}
             >
@@ -280,8 +280,8 @@ const Header = () => {
               to="/service"
               className={({ isActive }) =>
                 isActive
-                  ? "text-indigo-600 font-semibold block mb-4 text-lg"
-                  : "text-indigo-400 block mb-4 text-lg"
+                  ? "text-indigo-500 font-semibold block mb-4 text-lg"
+                  : "text-gray-400 block mb-4 text-lg"
               }
               onClick={() => setIsMenuOpen(false)}
             >
@@ -291,8 +291,8 @@ const Header = () => {
               to="/contact"
               className={({ isActive }) =>
                 isActive
-                  ? "text-indigo-600 font-semibold block mb-4 text-lg"
-                  : "text-indigo-400 block mb-4 text-lg"
+                  ? "text-indigo-500 font-semibold block mb-4 text-lg"
+                  : "text-gray-400 block mb-4 text-lg"
               }
               onClick={() => setIsMenuOpen(false)}
             >
@@ -302,8 +302,8 @@ const Header = () => {
               to="/privacypolicy"
               className={({ isActive }) =>
                 isActive
-                  ? "text-indigo-600 font-semibold block mb-4 text-lg"
-                  : "text-indigo-400 block mb-4 text-lg"
+                  ? "text-indigo-500 font-semibold block mb-4 text-lg"
+                  : "text-gray-400 block mb-4 text-lg"
               }
               onClick={() => setIsMenuOpen(false)}
             >
@@ -313,7 +313,7 @@ const Header = () => {
               to="/signup"
               className={({ isActive }) =>
                 isActive
-                  ? "text-indigo-600 font-semibold bg-indigo-500 px-4 py-2 rounded block mb-4"
+                  ? "text-indigo-500 font-semibold bg-indigo-500 px-4 py-2 rounded block mb-4"
                   : "text-white bg-indigo-500 hover:bg-indigo-700 transition ease-in-out px-4 py-2 rounded-md block mb-4"
               }
               onClick={() => setIsMenuOpen(false)}
