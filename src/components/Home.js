@@ -296,6 +296,7 @@ import { Parallax } from "react-parallax";
 import Header from "./Header";
 import Below from "./Below";
 import Third from "./Third";
+import Allshops from "./Allshops"
 
 const floatingImages = [
   "https://i.pinimg.com/564x/2d/eb/e8/2debe867fa196f70cc97ee9ea27f1ef1.jpg", 
@@ -447,7 +448,11 @@ const Home = () => {
       </div>
     </div>
         </Parallax>
+      {/* <Allshops/> */}
+
       </div>
+    
+
       <Third />
       <Below />
     </>

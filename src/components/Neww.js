@@ -3,7 +3,8 @@ import { NavLink } from "react-router-dom";
 import Download from "./Download";
 import Testimonials from "./Marquee";
 import Next from "./Next";
-
+import Allshops from "./Allshops";
+import MultiIncrementor from "./NumberIncrementer";
 const Neww = () => {
   const items = [
     {
@@ -247,6 +248,9 @@ const Neww = () => {
           </div>
         </div>
       </div>
+<Allshops/>
+<MultiIncrementor/>
+
 <Testimonials/>
 <Next/>
       <Download />

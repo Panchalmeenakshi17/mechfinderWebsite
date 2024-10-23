@@ -4,6 +4,7 @@ import Third from "./Third";
 import Below from "./Below";
 import Neww from "./Neww";
 import { NavLink } from "react-router-dom";
+import Allshops from "./Allshops";
  
 const images = [
   "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -263,6 +264,7 @@ const Carousel = () => {
     </div>
   
 </div> */}
+
 <Neww/>
 {/* 
       <Third />
