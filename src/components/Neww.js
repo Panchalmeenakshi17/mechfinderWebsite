@@ -5,6 +5,8 @@ import Testimonials from "./Marquee";
 import Next from "./Next";
 import Allshops from "./Allshops";
 import MultiIncrementor from "./NumberIncrementer";
+import PremiumPage from "./PremiumPage";
+import MIne from "./MIne";
 const Neww = () => {
   const items = [
     {
@@ -45,6 +47,7 @@ const Neww = () => {
   ];
   return (
     <>
+    
       <div className=" h-full bg-gray-100 m-0">
         <div className="flex justify-center mb-10">
           <div className="flex mt- shadow-inner shadow-gray-00 bg-gray-300 w-full transition ease-in-out overflow-hidden">
@@ -73,6 +76,8 @@ const Neww = () => {
             </div>
           </div>
         </div>
+<MultiIncrementor/>
+
         <div className="md:p-16 p-4">
           <h1 className="font-semibold font-Poppins text-2xl md:text-3xl">
             Need any Plumber or Electrician or maybe a Cook?
@@ -89,7 +94,7 @@ const Neww = () => {
     </div> */}
             <NavLink
               to="/SignUp"
-              className="bg-blue-500 md:w-1/5 md:mb-20 hover:bg-blue-600 hover:scale-105 transition-transform duration-300 rounded-5xl h-[300px] shadow-2xl shadow-black flex flex-col items-center justify-center  ease-in-out   hover:cursor-pointer"
+              className="bg-blue-500 w-3/4  ml-8 md:ml-0   h-[280px] md:w-1/5 md:mb-20 hover:bg-blue-600 hover:scale-105 transition-transform duration-300 rounded-5xl md:h-[300px] shadow-2xl shadow-black flex flex-col items-center justify-center  ease-in-out   hover:cursor-pointer"
             >
               <div className="  shadow-black flex flex-col items-center justify-center">
                 <img
@@ -166,7 +171,7 @@ const Neww = () => {
               <div className="md:mt-20 mt-5 md:flex justify-start gap-6">
                 <NavLink
                   to="/SignUp"
-                  className="bg-white md:w-1/5 hover:scale-105 transition-transform duration-300 rounded-5xl h-[300px] shadow-2xl shadow-black flex flex-col items-center justify-center  ease-in-out hover:bg-gray-200 hover:cursor-pointer"
+                  className="bg-white w-5/6 md:w-1/5 hover:scale-105 transition-transform duration-300 rounded-5xl h-[260px] md:h-[300px] shadow-2xl shadow-black flex flex-col items-center justify-center md:ml-0 ml-6 ease-in-out hover:bg-gray-200 hover:cursor-pointer"
                 >
                   <div className=" rounded-5xl md:h-[280px]  flex flex-col items-center justify-center transition duration-300 ease-in-out  hover:cursor-pointer">
                     <img
@@ -182,9 +187,9 @@ const Neww = () => {
 
                 <NavLink
                   to="/SignUp"
-                  className="bg-white mt-6 md:w-1/5 hover:scale-105 transition-transform duration-300 rounded-5xl h-[300px] shadow-2xl shadow-black flex flex-col items-center justify-center ease-in-out hover:bg-gray-200 hover:cursor-pointer"
+                  className="bg-white mt-6 w-5/6 md:w-1/5 hover:scale-105 transition-transform duration-300 md:ml-0 ml-6 rounded-5xl h-[260px] md:h-[300px] shadow-2xl shadow-black flex flex-col items-center justify-center ease-in-out hover:bg-gray-200 hover:cursor-pointer"
                 >
-                  <div className="rounded-5xl h-[280px]  flex flex-col items-center justify-center transition duration-300 ease-in-out hover:bg-gray-200 hover:cursor-pointer">
+                  <div className="rounded-5xl   flex flex-col items-center justify-center transition duration-300 ease-in-out   hover:cursor-pointer">
                     <img
                       src="https://i.pinimg.com/564x/78/44/80/784480366a8cf77bb0f7f25272b2b47d.jpg"
                       alt="Example"
@@ -249,11 +254,13 @@ const Neww = () => {
         </div>
       </div>
 <Allshops/>
-<MultiIncrementor/>
 
 <Testimonials/>
-<Next/>
+{/* <Next/> */}
+     {/* <MIne/> */}
+     <PremiumPage/>
       <Download />
+
     </>
   );
 };

@@ -141,7 +141,6 @@
 
 // // // // // // // export default Allshops;
 
-
 // // // // // // import React, { useEffect, useState } from 'react';
 // // // // // // import { collection, getDocs } from 'firebase/firestore';
 // // // // // // import { firestore } from '../firebase'; // Adjust the path according to your structure
@@ -285,8 +284,6 @@
 
 // // // // // // export default Allshops;
 
-
-
 // // // // // import React, { useEffect, useState } from 'react';
 // // // // // import { collection, getDocs } from 'firebase/firestore';
 // // // // // import { firestore } from '../firebase'; // Adjust the path according to your structure
@@ -419,7 +416,6 @@
 // // // // // };
 
 // // // // // export default Allshops;
-
 
 // // // // import React, { useEffect, useState } from 'react';
 // // // // import { collection, getDocs } from 'firebase/firestore';
@@ -788,7 +784,6 @@
 
 // // // export default Allshops;
 
-
 // // import React, { useEffect, useState } from 'react';
 // // import { collection, getDocs } from 'firebase/firestore';
 // // import { firestore } from '../firebase'; // Adjust the path according to your structure
@@ -848,7 +843,6 @@
 // //               <h2 style={hoveredShop === shop.id ? { ...styles.shopName, ...styles.shopNameHover } : styles.shopName}>
 // //                 {shop.shopName}
 
-
 // //               </h2>
 
 // //               <div style={styles.imageGallery}>
@@ -856,8 +850,6 @@
 // //                 <img key={index} src={url} alt={`Shop Image ${index + 1}`} style={styles.galleryImage} />
 // //               ))}
 // //             </div>
-
-
 
 // //               <div style={hoveredShop === shop.id ? { ...styles.shopDetails, ...styles.shopDetailsHover } : styles.shopDetails}>
 
@@ -999,8 +991,6 @@
 // // };
 
 // // export default Allshops;
-
-
 
 // import React, { useEffect, useState } from 'react';
 // import { collection, getDocs } from 'firebase/firestore';
@@ -1236,10 +1226,10 @@
 // // Apply hover effects directly in the JSX
 // export default Allshops;
 
-
-import React, { useEffect, useState } from 'react';
-import { collection, getDocs } from 'firebase/firestore';
-import { firestore } from '../firebase'; // Adjust the path according to your structure
+import React, { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { firestore } from "../firebase"; // Adjust the path according to your structure
+import { NavLink } from "react-router-dom";
 
 const Allshops = () => {
   const [shops, setShops] = useState([]);
@@ -1250,9 +1240,12 @@ const Allshops = () => {
   useEffect(() => {
     const fetchShops = async () => {
       try {
-        const shopCollection = collection(firestore, 'shops');
+        const shopCollection = collection(firestore, "shops");
         const shopSnapshot = await getDocs(shopCollection);
-        const shopsData = shopSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        const shopsData = shopSnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
         setShops(shopsData); // Show all shops
       } catch (err) {
         setError(err.message);
@@ -1262,16 +1255,14 @@ const Allshops = () => {
     };
 
     fetchShops();
-    const email = localStorage.getItem('userEmail');
+    const email = localStorage.getItem("userEmail");
     if (email) {
       console.log(`The email stored in localStorage is: ${email}`);
     } else {
-      console.log('No email found in localStorage.');
+      console.log("No email found in localStorage.");
     }
   }, []);
   // Get the email from localStorage and log it to the console
-
-
 
   const handleCardClick = (shop) => {
     setSelectedShop(shop); // Set the clicked shop for modal
@@ -1282,73 +1273,139 @@ const Allshops = () => {
   };
 
   if (loading) {
-    return <div style={styles.loading}>Loading...</div>;
+    return (
+      <div className=" font-Poppins" style={styles.loading}>
+        Loading...
+      </div>
+    );
   }
 
   if (error) {
-    return <div style={styles.error}>Error: {error}</div>;
+    return (
+      <div className=" font-Poppins" style={styles.error}>
+        Error: {error}
+      </div>
+    );
   }
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>Shops Available on MechFinder</h1>
-      <p style={styles.infoText}>
-        Explore various types of shops registered on MechFinder. These are just some examples of the types of shops you can find. Whether you're looking for electricians, mechanics, or other services, we've got you covered!
+    <div className=" font-Poppins " style={styles.container}>
+      <h1
+        className=" text-center font-bold text-2xl py-4 md:text-3xl text-blue-600"
+        style={styles.title}
+      >
+        Shops Available on MechFinder
+      </h1>
+      <p className=" md:text-lg md:py-5 py-2 md:px-20 text-center  text-gray-500 text-base ">
+        Explore various types of shops registered on MechFinder. These are just
+        some examples of the types of shops you can find. Whether you're looking
+        for electricians, mechanics, or other services, we've got you covered!
       </p>
-      <ul style={styles.shopList}>
-        {shops.map(shop => (
+      <ul className=" mt-5  md:mt-5" style={styles.shopList}>
+        {shops.map((shop) => (
           <li
+            className=" shadow-2xl shadow-gray-500 hover:scale-105"
             key={shop.id}
             style={styles.shopItem}
-            onClick={() => handleCardClick(shop)} // Show modal on card click
           >
-            <div
-              style={{
-                ...styles.backgroundImage,
-                backgroundImage: `url(${shop.profileImageUrl && shop.profileImageUrl[0]})`,
-              }}
-            />
+              <div
+                style={{
+                  ...styles.backgroundImage,
+                  backgroundImage: `url(${
+                    shop.profileImageUrl && shop.profileImageUrl[0]
+                  })`,
+                }}
+              />
             <div style={styles.overlay}>
-              <h2 style={styles.shopName}>{shop.shopName}</h2>
-              <p style={styles.shopType}><strong>Type:</strong> {shop.shopType}</p>
-              <div style={styles.images}>
-                {shop.profileImageUrl && shop.profileImageUrl.slice(0, 2).map((url, index) => (
-                  <img
-                    key={index}
-                    src={url}
-                    alt={`Shop Image ${index + 1}`}
-                    style={styles.image}
-                  />
-                ))}
+              <div className=" w-full backdrop-blur-sm ">
+                <div className="p-5 ">
+                  <p
+                    className=" font-Poppins text-sm  text-gray-200
+               "
+                  >
+                    Type: {shop.shopType}
+                  </p>
 
+                  <h2 className=" py-2 text-white first-letter:capitalize text-xl font-semibold   ">
+                    {shop.shopName}
+                  </h2>
+                  <div className=" md:flex justify-around ">
+                    <div style={styles.images}>
+                      {shop.profileImageUrl &&
+                        shop.profileImageUrl
+                          .slice(0, 2)
+                          .map((url, index) => (
+                            <img
+                              key={index}
+                              src={url}
+                              alt={`Shop Image ${index + 1}`}
+                              style={styles.image}
+                            />
+                          ))}
+                    </div>
+                    <div
+                      onClick={() => handleCardClick(shop)}
+                      className=" md:py-0 hover:scale-95 transition ease-in-out   bg-fuchsia-500 md:w-1/3 w-1/2  h-1/2 md:flex justify-end mt-5 rounded-full "
+                    >
+                      <div className=" md:py-3 py-1 rounded-lg w-full  bg-white ">
+                        <h1 className=" text-xs md:text-sm font-Poppins text-black text-center font-bold  ">
+                          {" "}
+                          View Details{" "}
+                        </h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </li>
         ))}
       </ul>
+        <div className="md:py-16 py-12  transition ease-in-out  justify-center flex">
+      <NavLink className=" hover:rounded-full rounded-xl transition ease-in-out " to="/Signup">
+          <div className=" transition ease-in-out   rounded-xl px-10 hover:rounded-full py-3 hover:bg-gray-700 bg-gray-900">
+            <h1 className=" font-Poppins text-white">View All</h1>
+          </div>
+      </NavLink>
+        </div>
 
       {selectedShop && ( // Modal for displaying the detailed information of the selected shop
-        <div style={styles.modalOverlay} onClick={closeModal}>
+        <div
+          className=" backdrop-blur-sm "
+          style={styles.modalOverlay}
+          onClick={closeModal}
+        >
           <div style={styles.modalContent}>
             <h2>{selectedShop.shopName}</h2>
-            <p><strong>Type:</strong> {selectedShop.shopType}</p>
-            <p><strong>Contact Number:</strong> {selectedShop.contactNumber}</p>
-            <p><strong>Email:</strong> {selectedShop.email}</p>
-            <p><strong>Location:</strong> {selectedShop.location}</p>
+            <p>
+              <strong>Type:</strong> {selectedShop.shopType}
+            </p>
+            <p>
+              <strong>Contact Number:</strong> {selectedShop.contactNumber}
+            </p>
+            <p>
+              <strong>Email:</strong> {selectedShop.email}
+            </p>
+            <p>
+              <strong>Location:</strong> {selectedShop.location}
+            </p>
             <div>
               <strong>Images:</strong>
               <div style={styles.images}>
-                {selectedShop.profileImageUrl && selectedShop.profileImageUrl.slice(0, 2).map((url, index) => (
-                  <img
-                    key={index}
-                    src={url}
-                    alt={`Shop Image ${index + 1}`}
-                    style={styles.modalImage} // Use smaller size for modal images
-                  />
-                ))}
+                {selectedShop.profileImageUrl &&
+                  selectedShop.profileImageUrl.slice(0, 2).map((url, index) => (
+                    <img
+                      key={index}
+                      src={url}
+                      alt={`Shop Image ${index + 1}`}
+                      style={styles.modalImage} // Use smaller size for modal images
+                    />
+                  ))}
               </div>
             </div>
-            <button style={styles.closeButton} onClick={closeModal}>Close</button>
+            <button style={styles.closeButton} onClick={closeModal}>
+              Close
+            </button>
           </div>
         </div>
       )}
@@ -1359,138 +1416,138 @@ const Allshops = () => {
 // Styles for the Allshops component
 const styles = {
   container: {
-
-    maxWidth: '100%',
-    margin: '0 auto',
-    padding: '30px',
+    maxWidth: "100%",
+    margin: "0 auto",
+    padding: "30px",
     // backgroundColor: '#4787bc4b', // Light blue background for the whole container
-    background: 'linear-gradient(to bottom, #4b97ce3a, #13286731)',
-    color: '#1d3557', // Dark blue text
+    // background: 'linear-gradient(to bottom, #7981e2, #7981e2)',
+    color: "#1d3557", // Dark blue text
   },
-  title: {
-    textAlign: 'center',
-    marginBottom: '20px',
-    color: '#1d3557', // Dark blue title
-    fontSize: '36px',
-    fontWeight: '700',
-    textTransform: 'uppercase',
-  },
+  // title: {
+  //   textAlign: 'center',
+  //   marginBottom: '20px',
+  //   // color: '#1d3557', // Dark blue title
+  //   fontSize: '36px',
+  //   fontWeight: '700',
+  //   textTransform: 'uppercase',
+  // },
   infoText: {
-    textAlign: 'center',
-    fontSize: '18px',
-    marginBottom: '30px',
-    color: '#6c757d', // Gray text
-    lineHeight: '1.8',
+    textAlign: "center",
+    fontSize: "18px",
+    marginBottom: "30px",
+    color: "#6c757d", // Gray text
+    lineHeight: "1.8",
   },
   shopList: {
-    listStyleType: 'none',
+    listStyleType: "none",
     padding: 0,
-    display: 'flex',
-    flexWrap: 'wrap',
-    gap: '30px',
-    justifyContent: 'center',
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "30px",
+    justifyContent: "center",
   },
   shopItem: {
-    flex: '1 1 calc(25% - 40px)', // Adjust width to fit 4 cards per row
-    minWidth: '300px', // Set a minimum width for cards
-    borderRadius: '12px',
-    padding: '20px',
-    margin: '0 10px',
-    position: 'relative',
-    overflow: 'hidden',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    transition: 'transform 0.3s ease',
-    cursor: 'pointer', // Change cursor to pointer on hover
-    backgroundColor: '#ffffff', // White background for cards
+    flex: "1 1 calc(25% - 40px)", // Adjust width to fit 4 cards per row
+    minWidth: "300px", // Set a minimum width for cards
+    borderRadius: "29px",
+    // padding: '20px',
+    margin: "0 10px",
+    position: "relative",
+    overflow: "hidden",
+
+    transition: "transform 0.3s ease",
+    cursor: "pointer", // Change cursor to pointer on hover
+    backgroundColor: "#ffffff", // White background for cards
   },
   backgroundImage: {
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
     zIndex: 1,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    filter: 'blur(3px)',
-    transform: 'scale(1.1)',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+
+    transform: "scale(1.1)",
   },
   overlay: {
-    position: 'relative',
+    position: "relative",
     zIndex: 2,
-    color: '#fff',
-    textAlign: 'left',
-    padding: '20px',
-    background: 'rgba(30, 91, 156, 0.7)', // Dark blue with transparency for overlay
+    color: "#fff",
+    textAlign: "left",
+    // padding: '20px',
+    // background: '#898ddf8d', // Dark blue with transparency for overlay
+    background: "linear-gradient(to top, #3b82f6, #3b83f6aa)",
   },
   shopName: {
-    fontSize: '26px',
-    marginBottom: '10px',
+    fontSize: "26px",
+    marginBottom: "10px",
   },
   shopType: {
-    fontSize: '18px',
-    marginBottom: '10px',
+    fontSize: "18px",
+    marginBottom: "10px",
   },
   images: {
-    display: 'flex',
-    gap: '20px',
-    marginTop: '10px',
-    justifyContent: 'center',
+    display: "flex",
+    gap: "20px",
+    marginTop: "10px",
+    justifyContent: "start",
   },
   image: {
-    width: '100px', // Smaller size for card images
-    height: '100px',
-    borderRadius: '5px',
-    objectFit: 'cover',
-    border: '2px solid #007BFF', // Blue border for images
-    transition: 'transform 0.3s',
+    width: "100px", // Smaller size for card images
+    height: "100px",
+    borderRadius: "5px",
+    objectFit: "cover",
+    border: "2px solid #007BFF", // Blue border for images
+    transition: "transform 0.3s",
   },
   loading: {
-    textAlign: 'center',
-    fontSize: '18px',
-    color: '#333',
+    textAlign: "center",
+    fontSize: "18px",
+    color: "#333",
   },
   error: {
-    textAlign: 'center',
-    color: 'red',
+    textAlign: "center",
+    color: "red",
   },
   modalOverlay: {
-    position: 'fixed',
+    position: "fixed",
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "rgba(0, 0, 0, 0.814)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
     zIndex: 1000,
   },
   modalContent: {
-    position: 'relative',
-    color: '#fff',
-    padding: '20px',
-    background: '#1d3557', // Dark blue background for modal
-    borderRadius: '8px',
-    maxWidth: '600px',
-    width: '90%',
+    position: "relative",
+    color: "#fff",
+    padding: "20px",
+    background: "#6d97d1", // Dark blue background for modal
+    borderRadius: "8px",
+    maxWidth: "600px",
+    width: "90%",
   },
   modalImage: {
-    width: '120px', // Smaller size for card images
-    height: '170px',
-    borderRadius: '5px',
-    objectFit: 'cover',
-    margin: '5px',
+    width: "120px", // Smaller size for card images
+    height: "170px",
+    borderRadius: "5px",
+    objectFit: "cover",
+    margin: "5px",
   },
   closeButton: {
-    marginTop: '15px',
-    padding: '10px 15px',
-    border: 'none',
-    borderRadius: '5px',
-    backgroundColor: '#007BFF', // Blue button
-    color: '#fff',
-    cursor: 'pointer',
-    transition: 'background-color 0.3s',
+    marginTop: "15px",
+    padding: "10px 15px",
+    border: "none",
+    borderRadius: "5px",
+    backgroundColor: "#007BFF", // Blue button
+    color: "#fff",
+    cursor: "pointer",
+    transition: "background-color 0.3s",
   },
 };
 
