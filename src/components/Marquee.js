@@ -267,7 +267,7 @@ const Testimonials = () => {
   const visibleTestimonials = testimonials.slice(startIndex, startIndex + itemsPerSlide); // Get testimonials based on screen size
 
   return (
-    <section className="md:py-5 py-10 bg-gray-100">
+    <section className="md:py-16 py-10 bg-gray-100">
       <div className="container mx-auto px-4 overflow-hidden">
         <h2 className="md:text-4xl text-3xl font-bold font-Poppins text-center mb-3 text-[#5e68ff]">
           What Our Service Providers Say

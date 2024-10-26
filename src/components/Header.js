@@ -207,14 +207,14 @@ const Header = () => {
           >
             Contact
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to="/privacypolicy"
             className={({ isActive }) =>
               isActive ? "text-indigo-500 font-semibold ml-6" : "text-gray-400 ml-6"
             }
           >
             Privacy Policy
-          </NavLink>
+          </NavLink> */}
         </div>
 
         {/* Signup/Login Links */}
@@ -298,7 +298,7 @@ const Header = () => {
             >
               Contact
             </NavLink>
-            <NavLink
+            {/* <NavLink
               to="/privacypolicy"
               className={({ isActive }) =>
                 isActive
@@ -308,7 +308,7 @@ const Header = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Privacy Policy
-            </NavLink>
+            </NavLink> */}
             <NavLink
               to="/signup"
               className={({ isActive }) =>

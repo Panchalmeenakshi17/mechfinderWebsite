@@ -335,7 +335,7 @@
 
 import React from 'react';
 
-const Next = () => {
+const   Next = () => {
   const cards = [
     {
       title: "Find local professionals easily",
@@ -380,12 +380,12 @@ const Next = () => {
   ];
 
   return (
-    <div className='font-Poppins mt-10 mb-20 px-4 md:px-10 lg:px-20'>
-      <h1 className='bg-gradient-to-r from-indigo-400 via-indigo-700 to-[#cc89f0] text-transparent bg-clip-text text-center font-semibold text-4xl mb-6 shadow-lg'>
+    <div className=' min-h-screen mt-10 font-Poppins md:mt-10 mb-20 px-4 md:px-10 lg:px-20'>
+      <h1 className='bg-gradient-to-r from-indigo-400 via-indigo-700 to-[#cc89f0] text-transparent bg-clip-text text-center font-semibold text-4xl md:mb-6  '>
         Benefits of Mechfinder
       </h1>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-10 justify-items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:mt-10 justify-items-center">
         {cards.map((card, index) => (
           <div 
             key={index} 

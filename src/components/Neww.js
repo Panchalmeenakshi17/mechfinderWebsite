@@ -76,7 +76,7 @@ const Neww = () => {
             </div>
           </div>
         </div>
-<MultiIncrementor/>
+
 
         <div className="md:p-16 p-4">
           <h1 className="font-semibold font-Poppins text-2xl md:text-3xl">
@@ -254,6 +254,7 @@ const Neww = () => {
         </div>
       </div>
 <Allshops/>
+      <MultiIncrementor/>
 
 <Testimonials/>
 {/* <Next/> */}

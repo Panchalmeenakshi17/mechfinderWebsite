@@ -107,34 +107,64 @@ import { NavLink } from "react-router-dom";
 const Third = () => {
   return (
     <>
-         <div className="flex flex-wrap bg-red500  font-Poppins md:flex-nowrap h-screen bg-gray-100">
+         <div className="flex flex-wrap bg-red500  font-Poppins md:flex-nowrap h-screen bg-gray-50">
         {/* Left Side: Images */}
-        <div className="w-full  p-10 bg-yellow-40  pr-4 mt-20 md:w-1/2 h-2/3 flex flex-col md:flex-row">
-          {/* Large Image */}
+        <div className="w-full mb-24  p-10 bg-yellow-00   md:pr-4 md:mt-20 md:w-1/2 h-[200px] md:h-2/3 flex   flex-row">
+          
           <div className="w-full md:w-1/2  ">
             <img
               src="https://i.pinimg.com/564x/ff/8a/82/ff8a82933f2e2169b4433997adce9b25.jpg"
               alt="Large Image"
-              className="w-full h-2/3 mt-20 object-cover shadow-[#000000] shadow-2xl rounded-tr-full"
+              className="md:w-full mt-28 w-[400px] h-[150px] md:h-2/3 md:mt-20 object-cover shadow-[#000000] shadow-2xl rounded-tr-full"
             />
           </div>
 
-          {/* Two Smaller Images */}
-          <div className="w-full md:w-1/2 flex flex-col space-y-12 ">
+          
+          <div className="w-full t-10 md:w-1/2 flex flex-col space-y-12 ">
             <img
               src="https://i.pinimg.com/564x/ee/8c/bc/ee8cbc307543c2cd3e1e7d07bbfedbb3.jpg"
               alt="Small Image 1"
-              className="w-full h-1/2 object-cover shadow-[#000000] shadow-2xl rounded-tr-full"
+              className="md:w-full w-[300px] h-[150px] md:h-1/2 object-cover shadow-[#000000] shadow-2xl rounded-tr-full"
             />
             <img
               src="https://i.pinimg.com/564x/68/f8/d6/68f8d61289daa2bb5f0f26dbed8c6ed6.jpg"
               alt="Small Image 2"
-              className="w-full h-1/2 object-cover shadow-[#111112] shadow-2xl rounded-tl-full"
+              className="md:w-full w-[400px] h-[150px] md:h-1/2 object-cover shadow-[#111112] shadow-2xl rounded-tl-full"
             />
           </div>
         </div>
         {/* Right Side: Text */}
-        <div className="w-full md:w-1/2 ml-6 flex flex-col items-start justify-center p-8 bg-[#c2d0ff]">
+        <div className="w-full h-1/2 md:h-full md:mt-0 mt-32 md:w-1/2 px-8 md:px-6 bg-[#c2d0ff] flex flex-col justify-center">
+          <div className="text-center md:ml-8  md:text-left">
+            <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-indigo-500 via-indigo-400 to-[#d78dfe] text-transparent bg-clip-text pb-2">
+              Book your shop or register individually
+            </h1>
+            <p className="text-base md:text-lg mt-4">
+              This is the text content that you want on the right side. You can
+              add more details or descriptions here to complement the images on
+              the left.
+            </p>
+          </div>
+
+          <div className="mt-8 md:ml-8 flex flex-col md:flex-row justify-center md:justify-start gap-4">
+            <NavLink
+              to="/SignUp"
+              className="relative inline-flex items-center justify-center p-4 px-5 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out rounded-full shadow-xl group hover:ring-1 hover:ring-purple-500"
+            >
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-600 via-purple-600 to-pink-700"></span>
+              <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-pink-500 rounded-full opacity-30 group-hover:rotate-90 ease"></span>
+              <span className="relative font-Poppins text-white">Register as Shop</span>
+            </NavLink>
+            <NavLink
+              to="/SignUp"
+              className="inline-flex items-center justify-center h-12 px-6 py-2 font-Poppins font-medium text-center text-gray-900 transition-all duration-300 ease-in-out bg-transparent border-2 border-gray-600 border-solid rounded-full cursor-pointer select-none hover:text-indigo-600 hover:border-indigo-600 focus:shadow-xs"
+            >
+              Register as Individual
+            </NavLink>
+          </div>
+        </div>
+    
+        {/* <div className="w-full md:w-1/2 ml-6 flex flex-col items-start justify-center p-8 bg-[#c2d0ff]">
         <div className="">
           <div className="text-center ml-8   md:text-center font-Poppins">
             <h1 className="text-5xl font-bold text-left bg-gradient-to-r from-indigo-500 via-indigo-400 to-[#d78dfe] text-transparent bg-clip-text pb-2">
@@ -160,9 +190,9 @@ Register as Individual
 </NavLink>
           </div>
           </div>
-        </div>
+        </div> */}
       </div>
-      <Next/>
+      {/* <Next/> */}
     </>
   );
 };

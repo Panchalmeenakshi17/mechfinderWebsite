@@ -717,13 +717,13 @@ const Contact = () => {
           backgroundImage: `url('https://images.unsplash.com/photo-1603714228681-b399854b8f80?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
         }}
       >
-        <div className="absolute md:h-[400px] h-1/2 md:h-[400px] lg:h-[400px] xl:h-[400px]  inset-0 bg-gradient-to-t from-[#8185e8] via-[#8184e8c1] to-[#000000] opacity-75"></div>
+        <div className="absolute  h-[290px]  md:h-[400px] lg:h-[400px] xl:h-[400px]  inset-0 bg-gradient-to-t from-[#8185e8] via-[#8184e8c1] to-[#000000] opacity-75"></div>
 
-        <div className="relative bg-gradient-to-r from-[#8185e8] via-[#8184e8c1] to-[#8184e8af] py-7 mt-16 ">
+        <div className="relative md:bg-gradient-to-r from-[#8185e8] via-[#8184e8c1] to-[#8184e8af] py-7 md:mt-16 ">
           {/* <div className="absolute inset-0 bg-gradient-to-r   from-[#ffffff25] to-[#ffffff14] shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div> */}
           <div className="text-[white] font-semibold font-Poppins relative px-4 py-10  sm:rounded-3xl sm:p-20">
-            <div className="text-left pb-6">
-              <h1 className="text-4xl">Contact Us</h1>
+            <div className="text-left md:mt-2 md:pb-6">
+              <h1 className="md:mt-0 mt-8 text-2xl md:text-4xl">Contact Us</h1>
               <p className="text-white text-2xl mt-5">
                 We Would love to hear from you!
               </p>

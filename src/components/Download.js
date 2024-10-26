@@ -33,12 +33,12 @@ const Download = () => {
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center px-5 py-10">
       {/* Background Image */}
-      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1644331683064-37e3fabb07af?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}>
+      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1715065458115-a4e56e4dfe42?q=80&w=1975&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}>
         <div className="absolute inset-0 bg-black  opacity-40"></div> {/* Backdrop Effect */}
       </div>
 
       {/* Trending Section */}
-      <h1 className="text-5xl text-white backdrop-blur-0  font-semibold font-Poppins mb-10 relative z-10">Trending on MechFinder</h1>
+      <h1 className="md:text-4xl text-3xl text-center text-white backdrop-blur-0  font-semibold font-Poppins mb-10 relative z-10">Trending on MechFinder</h1>
 
       {/* Trending Cards */}
       <div className="grid backdrop-blur-sm bg-[#ffffff00] p-2 rounded-2xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16 relative z-10">

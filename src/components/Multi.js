@@ -49,9 +49,9 @@ const Incrementor = ({ title, startNumber, targetNumber, speed, imageUrl }) => {
     }, [ref, startNumber]);
 
     return (
-        <div ref={ref} className="flex flex-col items-center justify-center shadow-2xl md:mt-0 mt-5 md:p-0 bg-[#ffffff] rounded-5xl border md:w-72 w-5/6 mx-auto"> {/* Card Container */}
+        <div ref={ref} className="flex flex-col items-center justify-center shadow-2xl md:mt-0 mt-5 md:p-0 bg-[#ffffff] rounded-2xl md:rounded-3xl border md:w-72 w-4/6 mx-auto"> {/* Card Container */}
             {/* Image above the title */}
-            <img src={imageUrl} alt={title} className="md:w-56 md:h-44 mb-2 mt-6 md:mt-5 w-48 h-40 mx-auto" />  
+            {/* <img src={imageUrl} alt={title} className="md:w-56 md:h-44 mb-2 mt-6 md:mt-5 w-48 h-40 mx-auto" />   */}
             <h3 className=" text-lg font-Poppins font-semibold mb-2 mt-2 text-center">{title}</h3> {/* Poppins font applied */}
             <div 
                 className="text-4xl font-bold font-Poppins text-indigo-600 rounded-full flex justify-center   transition-transform duration-500 ease-in-out transform" 
@@ -63,10 +63,10 @@ const Incrementor = ({ title, startNumber, targetNumber, speed, imageUrl }) => {
     );
 };
 
-const MultiIncrementor = () => {
+const MultiIncrementornew = () => {
     return (
         <div className="md:flex flex-col items-center">
-            <div className="md:h-[500px] md:p-0 p-6 items-center md:flex justify-center bg-gradient-to-r from-indigo-400 to-indigo-600 w-full">
+            <div className="md:h-[300px] md:p-0 p-6 items-center md:flex justify-center bg-gradient-to-r from-indigo-400 to-indigo-600 w-full">
                 <div>
                     <div className='md:flex justify-center'>
                         <h1 className='font-Poppins text-center md:text-3xl text-2xl text-white font-semibold'>
@@ -102,4 +102,4 @@ const MultiIncrementor = () => {
     );
 };
 
-export default MultiIncrementor;
+export default MultiIncrementornew;

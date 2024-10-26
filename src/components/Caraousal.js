@@ -3,6 +3,8 @@ import Header from "./Header";
 import Third from "./Third";
 import Below from "./Below";
 import Neww from "./Neww";
+import { firestore } from "../firebase"; // Adjust the import path according to your setup
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { NavLink } from "react-router-dom";
 import Allshops from "./Allshops";
  
@@ -94,6 +96,59 @@ const Carousel = () => {
   const [displayText, setDisplayText] = useState("");
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false); // New state for loading
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Check if any fields are empty
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.subject ||
+      !formData.message
+    ) {
+      alert("Please fill in all the fields before submitting.");
+      return; // Stop submission if fields are empty
+    }
+
+    setLoading(true); // Start loader
+
+    try {
+      // Add form data to Firestore collection 'contactForms'
+      await addDoc(collection(firestore, "contactForms"), {
+        ...formData,
+        timestamp: serverTimestamp(), // Optionally add a server timestamp
+      });
+
+      alert("Form submitted successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to submit the form");
+    } finally {
+      setLoading(false); // Stop loader
+    }
+  };
 
   const handleClick = (index) => {
     setActiveIndex(index);
@@ -266,6 +321,81 @@ const Carousel = () => {
 </div> */}
 
 <Neww/>
+
+<div className="  font-Poppins" id="form">
+                    <h2 className="mb-4 text-2xl font-bold dark:text-indigo-700">Ready to Get Started?</h2>
+                    <div className="  bg-white w-4/8 flex justify-center  font-Poppins">
+              <form className=" p-10 " onSubmit={handleSubmit}>
+                <input
+                  className="mb-4 appearance-none border rounded-full w-full py-2 px-3 text-gray-800 placeholder:text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
+                  type="text"
+                  placeholder="Name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+
+                <input
+                  className="mb-4 appearance-none border rounded-full w-full py-2 px-3 text-gray-800 placeholder:text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+
+                <input
+                  className="mb-4 appearance-none border rounded-full w-full py-2 px-3 text-gray-800 placeholder:text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
+                  type="text"
+                  placeholder="Subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                />
+
+                <textarea
+                  className="mb-4 min-h-0 appearance-none border rounded-2xl h-64 w-full py-2 px-3 text-gray-800 placeholder:text-gray-400 leading-tight focus:outline-none focus:shadow-outline "
+                  placeholder="Type your message here..."
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  style={{ height: "121px" }}
+                ></textarea>
+
+                <div className="flex justify-between">
+                  <button
+                    type="submit"
+                    className="bg-indigo-600 hover:bg-indigo-700 text-white font- py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
+                    disabled={loading} // Disable button when loading
+                  >
+                    {loading ? "Sending..." : "Send ➤"}
+                  </button>
+                  <input
+                    className="bg-indigo-600 hover:bg-indigo-700 text-white font- py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
+                    type="reset"
+                    onClick={() =>
+                      setFormData({
+                        name: "",
+                        email: "",
+                        subject: "",
+                        message: "",
+                      })
+                    }
+                  />
+                </div>
+
+                {loading && (
+                  <p className="text-center text-gray-800 placeholder:text-gray-400 mt-4">
+                    Submitting form, please wait...
+                  </p>
+                )}
+              </form>
+            </div>
+                </div>
 {/* 
       <Third />
       <Below /> */}
