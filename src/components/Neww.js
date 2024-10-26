@@ -49,33 +49,7 @@ const Neww = () => {
     <>
     
       <div className=" h-full bg-gray-100 m-0">
-        <div className="flex justify-center mb-10">
-          <div className="flex mt- shadow-inner shadow-gray-00 bg-gray-300 w-full transition ease-in-out overflow-hidden">
-            <div className="animate-marquee transition ease-in-out rounded-2xl px-6 py-9 inline-block text-white text-xl font-semibold font-Poppins whitespace-nowrap">
-              {items.map((item, index) => (
-                <span
-                  key={index}
-                  className="mx-4 bg-gray-100 transition ease-in-out shadow-gray-600 shadow-xl text-blue-500 rounded-2xl py-6 px-4 inline-block"
-                  style={{ width: "210px", height: "210px" }} // Size adjustments
-                >
-                  <img
-                    src={item.imageUrl}
-                    alt={item.title}
-                    className="w-full h-full transition ease-in-out object-cover rounded-xl"
-                    style={{ width: "150px", height: "150px" }} // Square image box
-                  />
-                  <p className="text-right text-2xl md:-mt-3 ">
-                    {/* Styling the first letter */}
-                    <span className="text-3xl font-semibold backdrop-blur-sm">
-                      {item.title.charAt(0)}
-                    </span>
-                    <span className="text-xl">{item.title.slice(1)}</span>
-                  </p>
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
+      
 
 
         <div className="md:p-16 p-4">
@@ -249,6 +223,34 @@ const Neww = () => {
                   </ul>
                 </div>
               </div>
+            </div>
+          </div>
+
+        </div>
+          <div className="flex justify-center mt-10 mb-0">
+          <div className="flex mt- shadow-inner shadow-gray-00 bg-gray-300 w-full transition ease-in-out overflow-hidden">
+            <div className="animate-marquee transition ease-in-out rounded-2xl px-6 py-9 inline-block text-white text-xl font-semibold font-Poppins whitespace-nowrap">
+              {items.map((item, index) => (
+                <span
+                  key={index}
+                  className="mx-4 bg-gray-100 transition ease-in-out shadow-gray-600 shadow-xl text-blue-500 rounded-2xl py-6 px-4 inline-block"
+                  style={{ width: "210px", height: "210px" }} // Size adjustments
+                >
+                  <img
+                    src={item.imageUrl}
+                    alt={item.title}
+                    className="w-full h-full transition ease-in-out object-cover rounded-xl"
+                    style={{ width: "150px", height: "150px" }} // Square image box
+                  />
+                  <p className="text-right text-2xl md:-mt-3 ">
+                    {/* Styling the first letter */}
+                    <span className="text-3xl font-semibold backdrop-blur-sm">
+                      {item.title.charAt(0)}
+                    </span>
+                    <span className="text-xl">{item.title.slice(1)}</span>
+                  </p>
+                </span>
+              ))}
             </div>
           </div>
         </div>

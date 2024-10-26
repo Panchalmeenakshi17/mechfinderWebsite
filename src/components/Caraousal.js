@@ -9,13 +9,18 @@ import { NavLink } from "react-router-dom";
 import Allshops from "./Allshops";
  
 const images = [
-  "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1626186767260-c9301d4dd628?q=80&w=2013&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  // "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1545262722-9e0d80a0bc01?q=80&w=1806&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  // "https://images.unsplash.com/photo-1626186767260-c9301d4dd628?q=80&w=2013&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1495627076173-9ae37faaee46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "https://images.unsplash.com/photo-1627660080110-20045fd3875d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1480455454781-1af590be2a58?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1708540084677-dc5838b37627?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://c8.alamy.com/comp/FTAXDW/indian-and-oriental-shoes-and-slippers-on-display-in-footwear-shop-FTAXDW.jpg",
+  // "https://images.unsplash.com/photo-1480455454781-1af590be2a58?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1571204829887-3b8d69e4094d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  // "https://images.unsplash.com/photo-1708540084677-dc5838b37627?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1612687286248-9811801bd618?q=80&w=1818&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1497219055242-93359eeed651?q=80&w=2049&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 ];
-
 const captions = [
   "MechFinder: Your go-to platform for connecting with local service providers—plumbers, electricians, painters, and more.",
   "Post a query in seconds and get immediate responses from trusted professionals in your area.",
@@ -321,13 +326,60 @@ const Carousel = () => {
 </div> */}
 
 <Neww/>
+<div className="flex justify-center font-Poppins items-center min-h-screen bg-blue-100">
+      {/* Container */}
+      <div className="flex flex-col p-6 md:flex-row shadow-lg rounded-lg overflow-hidden bg-white">
+        
+        {/* Left Panel - Contact Information */}
+        <div className="bg-gradient-to-tr from-blue-900 to-blue-600 rounded-2xl  text-white p-8 md:w-1/2 flex flex-col justify-between">
+          <h2 className="text-3xl font-semibold mb-6">Contact Us
+          <hr className=" w-2/3 mt-2"/>
+          </h2>
+         
+          <div className="space-y-4">
+            <p className="flex items-start">
+              {/* <span className="material-icons mr-2">location_on</span> */}
+              Wazirpur, Gurugram, Haryana 121505
+            </p>
+            <p className="flex items-start">
+              {/* {/* <span className="material-icons mr-2">email</span> */} 
+              mechfinderhelp@gmail.com
+            </p>
+            
+            <p className="flex items-start">
+              {/* {/* <span className="material-icons mr-2">phone</span> */}  
+              +91 9818908237
+            </p>
+          </div>
+  
+          <div className=" ">
+          <hr className=" w-2/3 md:mt-0 mt-4 "/>
 
-<div className="  font-Poppins" id="form">
-                    <h2 className="mb-4 text-2xl text-center font-bold dark:text-indigo-700">Reach Out to us through</h2>
+          <div className="flex space-x-4 mt-6">
+            <NavLink to='https://www.instagram.com/_mechfinder?igsh=dDNzMWNqdjQ0em4x'>
+            <span className="material-icons cursor-pointer">Instagram</span>
+
+            </NavLink>
+            <NavLink to='https://www.linkedin.com/in/mech-finder-890786330?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'>
+
+            <span className="material-icons cursor-pointer">Linkedin</span>
+            </NavLink>
+            <NavLink to='https://x.com/_mechfinder'>
+            <span className="material-icons cursor-pointer">Twitter</span>
+
+            </NavLink>
+          </div>
+
+          </div>
+        </div>
+
+        {/* Right Panel - Contact Form */}
+     <div className="  font-Poppins" id="form">
+                    <h2 className="mb-4md:mt-0 mt-10 text-2xl text-center font-bold dark:text-indigo-700">Reach Out to us through</h2>
                     <div className="  bg-white w-4/8 flex justify-center  font-Poppins">
               <form className=" p-10 " onSubmit={handleSubmit}>
                 <input
-                  className="mb-4 appearance-none border rounded-full w-full py-2 px-3 text-gray-800 placeholder:text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
+                  className="mb-4 appearance-none border rounded-full w-full py-3 px-3 text-gray-800 placeholder:text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
                   type="text"
                   placeholder="Name"
                   name="name"
@@ -337,7 +389,7 @@ const Carousel = () => {
                 />
 
                 <input
-                  className="mb-4 appearance-none border rounded-full w-full py-2 px-3 text-gray-800 placeholder:text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
+                  className="mb-4 appearance-none border rounded-full w-full py-3 px-3 text-gray-800 placeholder:text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
                   type="email"
                   placeholder="Email"
                   name="email"
@@ -347,7 +399,7 @@ const Carousel = () => {
                 />
 
                 <input
-                  className="mb-4 appearance-none border rounded-full w-full py-2 px-3 text-gray-800 placeholder:text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
+                  className="mb-4 appearance-none border rounded-full w-full py-3 px-3 text-gray-800 placeholder:text-gray-400 leading-tight focus:outline-none focus:shadow-outline"
                   type="text"
                   placeholder="Subject"
                   name="subject"
@@ -357,7 +409,7 @@ const Carousel = () => {
                 />
 
                 <textarea
-                  className="mb-4 min-h-0 appearance-none border rounded-2xl h-64 w-full py-2 px-3 text-gray-800 placeholder:text-gray-400 leading-tight focus:outline-none focus:shadow-outline "
+                  className="mb-4 min-h-0 appearance-none border rounded-2xl h-64 w-full py-3 px-3 text-gray-800 placeholder:text-gray-400 leading-tight focus:outline-none focus:shadow-outline "
                   placeholder="Type your message here..."
                   name="message"
                   value={formData.message}
@@ -369,13 +421,13 @@ const Carousel = () => {
                 <div className="flex justify-between">
                   <button
                     type="submit"
-                    className="bg-indigo-600 hover:bg-indigo-700 text-white font- py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
+                    className="bg-indigo-600 hover:bg-indigo-700 text-white font- py-3 px-4 rounded-full focus:outline-none focus:shadow-outline"
                     disabled={loading} // Disable button when loading
                   >
                     {loading ? "Sending..." : "Send ➤"}
                   </button>
                   <input
-                    className="bg-indigo-600 hover:bg-indigo-700 text-white font- py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
+                    className="bg-indigo-600 hover:bg-indigo-700 text-white font- py-3 px-4 rounded-full focus:outline-none focus:shadow-outline"
                     type="reset"
                     onClick={() =>
                       setFormData({
@@ -396,6 +448,9 @@ const Carousel = () => {
               </form>
             </div>
                 </div>
+      </div>
+    </div>
+
 {/* 
       <Third />
       <Below /> */}

@@ -223,7 +223,7 @@ const Header = () => {
             to="/signup"
             className={({ isActive }) =>
               isActive
-                ? "text-indigo-500 font-semibold bg-indigo-500 px-4 py-2 rounded"
+                ? "text-white font-semibold bg-indigo-500 px-4 py-2 rounded"
                 : "text-white bg-indigo-500 hover:bg-indigo-700 transition ease-in-out px-4 py-2 rounded-md"
             }
           >
@@ -233,7 +233,7 @@ const Header = () => {
             to="/login"
             className={({ isActive }) =>
               isActive
-                ? "text-[black] font-medium bg-indigo-500 px-4 py-2 rounded"
+                ? "text-[#ffffff] font-medium bg-indigo-500 px-4 py-2 rounded"
                 : "text-white ml-5 bg-indigo-500 hover:bg-indigo-700 transition ease-in-out px-4 py-2 rounded-md"
             }
           >
@@ -313,7 +313,7 @@ const Header = () => {
               to="/signup"
               className={({ isActive }) =>
                 isActive
-                  ? "text-indigo-500 font-semibold bg-indigo-500 px-4 py-2 rounded block mb-4"
+                  ? "text-white font-semibold bg-indigo-500 px-4 py-2 rounded block mb-4"
                   : "text-white bg-indigo-500 hover:bg-indigo-700 transition ease-in-out px-4 py-2 rounded-md block mb-4"
               }
               onClick={() => setIsMenuOpen(false)}
@@ -324,7 +324,7 @@ const Header = () => {
               to="/login"
               className={({ isActive }) =>
                 isActive
-                  ? "text-[black] font-medium bg-indigo-500 px-4 py-2 rounded block mb-4"
+                  ? "text-[#ffffff] font-medium bg-indigo-500 px-4 py-2 rounded block mb-4"
                   : "text-white bg-indigo-500 hover:bg-indigo-700 transition ease-in-out px-4 py-2 rounded-md block mb-4"
               }
               onClick={() => setIsMenuOpen(false)}

@@ -13,11 +13,11 @@ const CallToAction = () => {
       <div className="flex space-x-4">
       <NavLink
           to="https://play.google.com/store/apps/details?id=com.mechfinder&hl=en_IN"
-        className=" backdrop-blur-lg bg-[#759fe8] transition ease-in-out shadow-inner text-white py-3 px-5 rounded-full flex items-center space-x-3  duration-300"
+        className="    transition ease-in-out  text-white py-3 px-5   flex items-center space-x-3  duration-300"
           target="_blank"
           rel="noopener noreferrer"
         >
-        <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded transition duration-300">
+        <button className="bg-indigo-600 shadow-inner hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded transition duration-300">
           Download App
         </button>
 

@@ -472,11 +472,11 @@
 // };
 
 // export default Login;
-
 import React, { useState } from 'react';
 import { sendPasswordResetEmail, signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../firebase'; // Adjust the path as needed
-import { useNavigate } from 'react-router-dom'; // For navigation
+import { auth } from '../firebase';
+import { useNavigate } from 'react-router-dom';
+import Header from './Header';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -485,39 +485,29 @@ const Login = () => {
   const [isForgotPasswordLoading, setIsForgotPasswordLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const navigate = useNavigate(); // For routing
+  const navigate = useNavigate();
 
   const handleLogin = async (event) => {
     event.preventDefault();
-
     if (!email || !password) {
       setError('Please fill in all fields');
       return;
     }
-
     setIsLoading(true);
-
     try {
       const { user } = await signInWithEmailAndPassword(auth, email, password);
-
       if (!user.emailVerified) {
         setError('Please verify your email before logging in.');
         return;
       }
-
-      // Store user information in local storage
       localStorage.setItem('userToken', user.uid);
       localStorage.setItem('userEmail', email);
-      navigate('/MyQuries'); // Navigate to Individual List page
+      navigate('/MyQuries');
     } catch (error) {
       let errorMessage = 'Incorrect email or password. Please try again.';
-      if (error.code === 'auth/invalid-email') {
-        errorMessage = 'Invalid email format. Please check your email.';
-      } else if (error.code === 'auth/wrong-password') {
-        errorMessage = 'Incorrect password. Please try again.';
-      } else if (error.code === 'auth/user-not-found') {
-        errorMessage = 'User not found. Please check your email or sign up.';
-      }
+      if (error.code === 'auth/invalid-email') errorMessage = 'Invalid email format. Please check your email.';
+      else if (error.code === 'auth/wrong-password') errorMessage = 'Incorrect password. Please try again.';
+      else if (error.code === 'auth/user-not-found') errorMessage = 'User not found. Please check your email or sign up.';
       setError(errorMessage);
     } finally {
       setIsLoading(false);
@@ -529,19 +519,14 @@ const Login = () => {
       setError('Please enter your email address');
       return;
     }
-
     setIsForgotPasswordLoading(true);
-
     try {
       await sendPasswordResetEmail(auth, email);
       alert('An email with instructions to reset your password has been sent to your email address.');
     } catch (error) {
       let errorMessage = 'An error occurred while sending the password reset email.';
-      if (error.code === 'auth/invalid-email') {
-        errorMessage = 'Invalid email format. Please check your email.';
-      } else if (error.code === 'auth/user-not-found') {
-        errorMessage = 'No user found with this email address.';
-      }
+      if (error.code === 'auth/invalid-email') errorMessage = 'Invalid email format. Please check your email.';
+      else if (error.code === 'auth/user-not-found') errorMessage = 'No user found with this email address.';
       setError(errorMessage);
     } finally {
       setIsForgotPasswordLoading(false);
@@ -549,71 +534,69 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
-      <div className="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
-        <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
-          <div>
-         
-          </div>
-          <div className="mt-12 flex flex-col items-center">
-            <h1 className="text-2xl xl:text-3xl font-extrabold">Log In</h1>
-            {error && <p className="mt-2 text-red-600">{error}</p>}
-            <div className="w-full flex-1 mt-8">
-              <form onSubmit={handleLogin}>
-                <div className="mx-auto max-w-xs">
-                  <input
-                    className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-                  <input
-                    className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                  />
-                  <button
-                    type="submit"
-                    className="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
-                    disabled={isLoading}
-                  >
-                    {isLoading ? (
-                      <span>Loading...</span>
-                    ) : (
-                      <span>Log In</span>
-                    )}
-                  </button>
-                </div>
-              </form>
-              <div className="my-12 border-b text-center">
-                <div className="leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2">
-                  Or sign in with
-                </div>
+    <div className="h-screen w-full font-Poppins bg-gray-100 text-gray-900">
+      <Header />
+      <div className="flex h-full">
+        {/* Form Section */}
+        <div className="w-full lg:w-1/2 flex items-center justify-center bg-white shadow sm:rounded-lg">
+          <div className="p-6 max-w-md w-full">
+            <div className="text-center mb-6">
+              <h1 className="text-3xl md:text-4xl font-bold">Log In to Your Account</h1>
+              {error && <p className="mt-2 text-red-600">{error}</p>}
+            </div>
+            <form onSubmit={handleLogin}>
+              <div className="mb-4">
+                <input
+                  className="w-full px-3 py-4 rounded-lg bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="mb-6">
+                <input
+                  className="w-full px-3 py-4 rounded-lg bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
               </div>
               <button
-                className="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-indigo-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline mt-5"
+                type="submit"
+                className="w-full py-4 rounded-lg bg-indigo-500 text-gray-100 font-semibold hover:bg-indigo-700 transition duration-300 focus:outline-none"
+                disabled={isLoading}
+              >
+                {isLoading ? 'Loading...' : 'Log In'}
+              </button>
+            </form>
+            <div className="mt-6 text-center">
+              <button
+                className="w-full py-3 bg-indigo-100 text-gray-800 font-bold rounded-lg hover:shadow transition duration-300 focus:outline-none"
                 onClick={handleForgotPassword}
                 disabled={isForgotPasswordLoading}
               >
-                <span className="ml-4">
-                  Forgot Password?
-                </span>
+                Forgot Password?
               </button>
+              <p className="mt-4 text-sm text-gray-600">
+                Don't have an account? <a href="/SignUp" className="text-indigo-500 border-b border-dotted">Sign Up</a>
+              </p>
             </div>
-            <p className="mt-6 text-xs text-gray-600 text-center">
-              Don't have an account? <a href="/SignUp" className="border-b border-gray-500 border-dotted">Sign Up</a>
-            </p>
           </div>
         </div>
-        <div className="flex-1 bg-indigo-100 text-center hidden lg:flex">
-          <div className="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat"
-            style={{ backgroundImage: "url('https://storage.googleapis.com/devitary-image-host.appspot.com/15848031292911696601-undraw_designer_life_w96d.svg')" }}>
-          </div>
+
+        {/* Image Section */}
+        <div className="hidden lg:flex w-1/2 bg-indigo-100">
+          <div
+            className="w-full h-full bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1608613304899-ea8098577e38?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            }}
+          ></div>
         </div>
       </div>
     </div>

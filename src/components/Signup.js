@@ -430,6 +430,7 @@ import { auth, firestore, storage } from '../firebase'; // Import Firebase servi
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { createUserWithEmailAndPassword, fetchSignInMethodsForEmail, sendEmailVerification } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
+import Header from './Header';
 
 const SignUp = () => {
   const [name, setName] = useState('');
@@ -520,24 +521,28 @@ const SignUp = () => {
   };
 
   return (
-    <div className="font-[sans-serif] bg-white md:h-screen">
+    <>
+    <div className=" font-Poppins bg-white md:min-h-screen">
+<Header/>
+
+    <div className="">
       <div className="grid md:grid-cols-2 items-center gap-8 h-full">
-        <div className="max-md:order-1 p-4 bg-gray-50 h-full">
+        <div className=" h-full">
           <img
-            src="https://readymadeui.com/signin-image.webp"
-            className="lg:max-w-[90%] w-full h-full object-contain block mx-auto"
+            src="https://images.unsplash.com/photo-1611021061285-16c871740efa?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            className="  w-full h-full object-contain block "
             alt="login-image"
           />
         </div>
 
-        <div className="flex items-center p-6 h-full w-full">
-          <form className="max-w-lg w-full mx-auto" onSubmit={handleSignUp}>
+        <div className="flex bg-yelow-200 items-center p-6 h-full w-full">
+          <form className="  w-full " onSubmit={handleSignUp}>
             <div className="mb-12">
-              <h3 className="text-blue-500 md:text-3xl text-2xl font-extrabold max-md:text-center">Create an account</h3>
+              <h3 className="text-blue-500 md:text-4xl text-3xl   font-bold max-md:text-center">Create an account</h3>
             </div>
 
             <div>
-              <label className="text-gray-800 text-xs block mb-2">Full Name</label>
+              <label className="text-gray-800 text-sm block mb-2">Full Name</label>
               <div className="relative flex items-center">
                 <input
                   name="name"
@@ -552,7 +557,7 @@ const SignUp = () => {
             </div>
 
             <div className="mt-6">
-              <label className="text-gray-800 text-xs block mb-2">Email</label>
+              <label className="text-gray-800 text-sm block mb-2">Email</label>
               <div className="relative flex items-center">
                 <input
                   name="email"
@@ -567,7 +572,7 @@ const SignUp = () => {
             </div>
 
             <div className="mt-6">
-              <label className="text-gray-800 text-xs block mb-2">Mobile Number</label>
+              <label className="text-gray-800 text-sm block mb-2">Mobile Number</label>
               <div className="relative flex items-center">
                 <input
                   name="mobileNumber"
@@ -582,7 +587,7 @@ const SignUp = () => {
             </div>
 
             <div className="mt-6">
-              <label className="text-gray-800 text-xs block mb-2">Profile Image</label>
+              <label className="text-gray-800 text-sm block mb-2">Profile Image</label>
               <input
                 type="file"
                 accept="image/*"
@@ -593,7 +598,7 @@ const SignUp = () => {
             </div>
 
             <div className="mt-6">
-              <label className="text-gray-800 text-xs block mb-2">Password</label>
+              <label className="text-gray-800 text-sm block mb-2">Password</label>
               <div className="relative flex items-center">
                 <input
                   name="password"
@@ -644,6 +649,10 @@ const SignUp = () => {
         </div>
       </div>
     </div>
+    </div>
+    
+    
+    </>
   );
 };
 

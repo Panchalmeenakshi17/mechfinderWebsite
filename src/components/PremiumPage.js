@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const PremiumComponent = () => {
 
@@ -55,9 +56,12 @@ const PremiumComponent = () => {
 </p>
 
         <div className="flex  mt-5 space-x-4">
-          <button className="bg-white text-blue-600 font-medium px-6 py-3 rounded-lg shadow-md hover:bg-gray-200 transition duration-200">
-            <i className="fab fa-apple mr-2"></i> Download MechFinder Now
+          <NavLink className="bg-white text-blue-600 font-medium px-6 py-3 rounded-lg shadow-md hover:bg-gray-200 transition duration-200" to="https://play.google.com/store/apps/details?id=com.mechfinder&hl=en_IN">
+          <button >
+             Download MechFinder Now
           </button>
+          
+          </NavLink>
           {/* <button className="bg-white text-blue-600 font-medium px-6 py-3 rounded-lg shadow-md hover:bg-gray-200 transition duration-200">
             <i className="fab fa-google-play mr-2"></i> Download Payday
           </button> */}

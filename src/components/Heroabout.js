@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import HowWorks from './Howworks';
 import MultiIncrementor from './NumberIncrementer';
 import VisionPage from './VisionPage';
+import { NavLink } from 'react-router-dom';
 
 const HeroAbout = () => {
       // Images for the carousel
@@ -59,13 +60,16 @@ const HeroAbout = () => {
             Review profiles, compare offers, and choose the provider that best suits your needs. It's quick, efficient, and 
             designed to make your life easier.
           </p> */}
+          <NavLink to='/Service'>
           <button className="bg-yellow-400 text-black font-semibold py-2 px-4 rounded-lg shadow-lg hover:bg-yellow-300 transition duration-300">
             Discover More
           </button>
+
+          </NavLink>
         </div>
 
         {/* Right Image */}
-        <div className="absolute md:right-10 right-0 w-20 md:w-96">
+        <div className="hidden md:block absolute md:right-10 right-0 w-20 md:w-96">
           <div className="md:relative">
             <img
               src={images[currentIndex]}
