@@ -323,7 +323,7 @@ const Carousel = () => {
 <Neww/>
 
 <div className="  font-Poppins" id="form">
-                    <h2 className="mb-4 text-2xl font-bold dark:text-indigo-700">Ready to Get Started?</h2>
+                    <h2 className="mb-4 text-2xl text-center font-bold dark:text-indigo-700">Reach Out to us</h2>
                     <div className="  bg-white w-4/8 flex justify-center  font-Poppins">
               <form className=" p-10 " onSubmit={handleSubmit}>
                 <input
